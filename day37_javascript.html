@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 문제</title>
+</head>
+<script>
+    // // 1번
+    // var name = prompt('이름을 입력해주세요');
+    // console.log('이름: ' + name);
+
+    // // 2번
+    // var grade = parseInt(prompt('학년을 입력해주세요'));
+    // switch(grade){
+    //     case '3' : console.log('학년:' + grade + '학년');
+    //     break;
+    //     case '2' : console.log('학년:' + grade + '학년');
+    //     break;
+    //     case '1' : console.log('학년:' + grade + '학년');
+    //     break;
+    //     default : console.log('우리학교 학생이 아님');
+    // }
+
+    // // 3번
+    // var score = parseInt(prompt('점수를 입력해주세요'));
+    // if((score>=95) && (score<=100)){
+    //     alert('성적:A+');
+    // }else if((score>=85) && (score<=94)){
+    //     alert('성적:A');
+    // }else if((score>=75) && (score<=84)){
+    //     alert('성적:B+');
+    // }else if((score>=70) && (score<=74)){
+    //     alert('성적:B');
+    // }else if((score>=60) && (score<=69)){
+    //     alert('성적:C');
+    // }else if(score<60){
+    //     alert('성적:낙제');
+    // }
+
+    // 반복문
+    // var i =0;
+    // var dan = prompt('단수를 입력해주세요.');
+    // while(i < 10){
+    //     console.log(i);
+    //     i++;
+    // }
+
+    // while(i<10){
+    //     i++;
+    //     console.log(dan + "*" + i + '=' + (dan*i));
+    // }
+
+    // for(시작변수; 조건; 계산식){여러개 작성할때 쓰는 중괄호}
+    for(var i  = 1; i <= 10; i++){
+        if(i%3 == 0){
+            console.log(i + 'little indians');
+        }else if(i == 10){
+            console.log(i + 'little indians boys');
+        }else{
+            console.log(i + 'little');
+        }
+    }
+</script>
+<body>
+    
+</body>
+</html>

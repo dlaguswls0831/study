@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+        div.artView>div.artGroup{
+            width: 100%;
+            height: 2500px;
+            transition: margin-top 0.5s;
+        }
+        div.artView>div.artGroup>div.article{
+            height: 500px;
+        }
+        div.artView>div.artGroup>div.article:nth-child(1){
+            background-color: blue;
+        }
+        div.artView>div.artGroup>div.article:nth-child(2){
+            background-color: blueviolet;
+        }
+        div.artView>div.artGroup>div.article:nth-child(3){
+            background-color: cadetblue;
+        }
+        div.artView>div.artGroup>div.article:nth-child(4){
+            background-color: chocolate;
+        }
+        div.artView>div.artGroup>div.article:nth-child(5){
+            background-color: brown;
+        }
+        div.artView>ul.paging{
+            width: 20%;
+            height: 20px;
+            position: absolute;
+            left: 20px; bottom: 300px;
+        }
+        div.artView>ul>li{
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #ccc;
+            margin: 10px 0px;
+            transition: height 0.5s;
+        }
+        div.artView>ul>li.on{
+            height: 40px;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var i =0;
+            $('ul.paging>li').click(function(){
+                $('ul.paging>li').removeClass('on');
+                $(this).addClass('on');
+                var ind = $(this).index();
+                $('.artGroup').css('margin-top',ind*-500+'px')
+                i=ind;
+            });
+            $('button').eq(0).click(function(){
+                i++;
+                if(i>4){
+                    i=4;
+                }
+                $('.artGroup').css('margin-top',i*-500+'px');
+                $('ul.paging>li').removeClass('on');
+                $('ul.paging>li').eq(i).addClass('on');
+            });
+            $('button').eq(1).click(function(){
+                i--;
+                if(i<0){
+                    i=0;
+                }
+                $('.artGroup').css('margin-top',i*-500+'px');
+                $('ul.paging>li').removeClass('on');
+                $('ul.paging>li').eq(i).addClass('on');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="artGroup">
+            <div class="article"></div>
+            <div class="article"></div>
+            <div class="article"></div>
+            <div class="article"></div>
+            <div class="article"></div>
+        </div>
+        <ul class="paging">
+            <li class="on"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <button>up</button>
+    <button>down</button>
+</body>
+</html>

@@ -1,0 +1,68 @@
+div.cntWrap{
+    margin-top: 100px;
+}
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content>div.header{
+    text-align: center;
+}
+div.cntWrap>div.content>div.header>h2{
+    font-size: 25px;
+    line-height: 80px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+div.cntWrap>div.content>div.header>p{
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0 auto;
+    width: 50%;
+    height: 40px;
+    overflow: hidden;
+}
+div.cntWrap>div.content>div.section::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content>div.section{
+    margin-top: 40px;
+    outline: 2px solid red;
+}
+div.cntWrap>div.content>div.section>div.article{
+    width: calc(50% - 20px);
+    float: left;
+    margin: 0px 10px;
+    outline: 2px solid blue;
+}
+div.cntWrap>div.content>div.section>div.article>div.image{
+    height: 240px;
+    background-color: rgb(208, 255, 0);
+    float: left;
+    width: 50%;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts{
+    padding: 40px 20px;
+    width: 50%;
+    float: left;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>h3{
+    font-size: 15px;
+    line-height: 40px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>h5{
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 40px;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>p{
+    font-size: 12px;
+    line-height: 20px;
+    height: 80px;
+    overflow: hidden;
+}

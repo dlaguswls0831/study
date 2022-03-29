@@ -1,0 +1,139 @@
+div.cntWrap{
+    margin-top: 160px;
+}
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content>div.header{}
+div.cntWrap>div.content>div.header>h2{
+    font-size: 36px;
+    line-height: 80px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+div.cntWrap>div.content>div.header>p{
+    width: calc(100% / 12 * 8);
+    font-size: 14px;
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+}
+div.cntWrap>div.content>div.section{
+    margin-top: 80px;
+}
+div.cntWrap>div.content>div.section>div.article{}
+div.cntWrap>div.content>div.section>div.article::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content>div.section>div.article>div.img{
+    width: calc(100% / 12 * 8 - 10px);
+    overflow: hidden;
+    float: left;
+    position: relative;
+}
+div.cntWrap>div.content>div.section>div.article>div.img>div.num{
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+    font-weight: 700;
+}
+div.cntWrap>div.content>div.section>div.article>div.img>div.num>span{}
+div.cntWrap>div.content>div.section>div.article>div.img>ul.images{
+    width: 600%;
+}
+div.cntWrap>div.content>div.section>div.article>div.img>ul.images>li.image{
+    height: 280px;
+    width: calc(100% / 6);
+    float: left;
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+div.cntWrap>div.content>div.section>div.article>div.img>ul.images>li.image.i1{
+    background-image: url('../images/bnr_p01.jpg');
+}
+div.cntWrap>div.content>div.section>div.article>div.img>ul.images>li.image.i2{
+    background-image: url('../images/bnrbg.jpg');
+}
+div.cntWrap>div.content>div.section>div.article>div.img>ul.images>li.image.i3{
+    background-image: url('../images/cnt01_pic01.jpg');
+}
+div.cntWrap>div.content>div.section>div.article>div.img>ul.images>li.image.i4{
+    background-image: url('../images/cnt01_pic02.jpg');
+}
+div.cntWrap>div.content>div.section>div.article>div.img>ul.images>li.image.i5{
+    background-image: url('../images/cnt01_pic03.jpg');
+}
+div.cntWrap>div.content>div.section>div.article>div.img>ul.images>li.image.i6{
+    background-image: url('../images/cnt02_pic01.jpg');
+}
+div.cntWrap>div.content>div.section>div.article>div.img>ul.btns{
+    width: 100%;
+    position: absolute;
+    top: 140px;
+    left: 20px;
+    font-size: 25px;
+}
+div.cntWrap>div.content>div.section>div.article>div.img>ul.btns::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content>div.section>div.article>div.img>ul.btns>li.left{
+    width: 50%;
+    float: left;
+    cursor: pointer;
+}
+div.cntWrap>div.content>div.section>div.article>div.img>ul.btns>li.left>i{}
+div.cntWrap>div.content>div.section>div.article>div.img>ul.btns>li.right{
+    width: 10%;
+    float: right;
+    cursor: pointer;
+}
+div.cntWrap>div.content>div.section>div.article>div.img>ul.btns>li.right>i{}
+div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco{
+    width: calc(100% / 12 * 4 - 10px);
+    float: right;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li{}
+div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-last-child(1){
+    border-bottom: 1px solid black;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(odd).on+li{
+    height: 160px;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(even){
+    height: 0;
+    overflow: hidden;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li>h3{
+    font-size: 18px;
+    text-transform: capitalize;
+    line-height: 40px;
+    font-weight: 700;
+    cursor: pointer;
+    border-top: 1px solid black;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li>h5{
+    font-size: 12px;
+    text-transform: capitalize;
+    line-height: 40px;
+    color: #666;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li>p{
+    font-size: 14px;
+    line-height: 20px;
+    height: 80px;
+    overflow: hidden;
+    color: #666;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li>i{
+    font-size: 24px;
+    line-height: 40px;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li.on{}

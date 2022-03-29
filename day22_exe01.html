@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        body{
+            width: 1000px;
+            height: 1000px;
+            background-color: rgb(255, 238, 0);
+            position: relative;
+        }
+        body:hover>div{
+            left: 950px;
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            /* left,right,top,bttom 반드시 포자션이 있는 상태에서만 사용됩니다.*/
+            left: 0px;
+            top: 0px;
+            /* 트래지션은 변경되기 전의 선택자 안에 추가가 된다. 변경 범위가 있어야합니다. */
+            transition: left 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+div.cntWrap{
+    margin-top: 160px;
+}
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content>div.header{}
+div.cntWrap>div.content>div.header>h2{
+    font-size: 36px;
+    line-height: 80px;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: center;
+}
+div.cntWrap>div.content>div.header>p{
+    width: calc(100% / 12 * 8);
+    height: 40px;
+    line-height: 20px;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 20px;
+}
+div.cntWrap>div.content>div.section{
+    margin-top: 80px;
+}
+div.cntWrap>div.content>div.section::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content>div.section>div.artView{
+    width: calc(100% / 12 * 8);
+    float: left;
+}
+div.cntWrap>div.content>div.section>div.artView>div.thumbView{
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../images/bnr_p01.jpg');
+    transition: all 0.5s;
+}
+div.cntWrap>div.content>div.section>div.artView>div.artGroup{
+    margin-top: 20px;
+}
+div.cntWrap>div.content>div.section>div.artView>div.artGroup::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content>div.section>div.artView>div.artGroup>div.article{
+    width: calc(100% / 4 - 20px);
+    margin: 0px 10px;
+    float: left;
+}
+div.cntWrap>div.content>div.section>div.artView>div.artGroup>div.article>div.image{
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+div.cntWrap>div.content>div.section>div.artView>div.artGroup>div.article>div.image.i1{
+    background-image: url('../images/bnr_p01.jpg');
+}
+div.cntWrap>div.content>div.section>div.artView>div.artGroup>div.article>div.image.i2{
+    background-image: url('../images/bnrbg.jpg');
+}
+div.cntWrap>div.content>div.section>div.artView>div.artGroup>div.article>div.image.i3{
+    background-image: url('../images/cnt01_pic01.jpg');
+}
+div.cntWrap>div.content>div.section>div.artView>div.artGroup>div.article>div.image.i4{
+    background-image: url('../images/cnt01_pic02.jpg');
+}
+div.cntWrap>div.content>div.section>div.texts{
+    width: calc(100% / 12 * 3.7);
+    float: left;
+    margin-left: 20px;
+}
+div.cntWrap>div.content>div.section>div.texts>h3{
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+div.cntWrap>div.content>div.section>div.texts>ul.acd{}
+div.cntWrap>div.content>div.section>div.texts>ul.acd>li{
+    cursor: pointer;
+}
+div.cntWrap>div.content>div.section>div.texts>ul.acd>li:nth-last-child(1){
+    border-bottom: 1px solid black;
+}
+div.cntWrap>div.content>div.section>div.texts>ul.acd>li:nth-child(odd){
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-top: 1px solid black;
+}
+div.cntWrap>div.content>div.section>div.texts>ul.acd>li:nth-child(even){
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+div.cntWrap>div.content>div.section>div.texts>ul.acd>li.show{}
+div.cntWrap>div.content>div.section>div.texts>ul.acd>li:nth-child(odd).show+li{
+    height: 120px;
+}
+div.cntWrap>div.content>div.section>div.texts>ul.acd>li>p{
+    font-size: 14px;
+    line-height: 20px;
+    height: 100px;
+    overflow: hidden;
+}
+div.cntWrap>div.content>div.section>div.texts>div.btns{
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+div.cntWrap>div.content>div.section>div.texts>div.btns::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content>div.section>div.texts>div.btns>div.left{
+    width: 48%;
+    float: left;
+    border: 2px solid #fc0;
+    border-radius: 20px;
+    cursor: pointer;
+}
+div.cntWrap>div.content>div.section>div.texts>div.btns>div.right{
+    width: 48%;
+    float: right;
+    border: 2px solid #fc0;
+    border-radius: 20px;
+    cursor: pointer;
+}

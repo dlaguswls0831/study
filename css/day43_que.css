@@ -1,0 +1,223 @@
+/* 1번 */
+ul.acrod{
+    width: 50%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+ul.acrod>li:nth-child(odd){
+    line-height: 40px;
+    background-color: #ccc;
+    text-align: center;
+    font-size: 20px;
+}
+ul.acrod>li:nth-child(odd).show+li{
+    height: 120px;
+}
+ul.acrod>li:nth-child(even){
+    background-color: rgb(250, 112, 112);
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+ul.acrod>li>p{}
+ul.acrod>li:nth-child(even)>p{
+    width: 50%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    margin: 0 auto;
+    height: 80px;
+    overflow: hidden;
+}
+
+/* 2번 */
+div.artView{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+div.artView>div.artGroup{
+    width: 400%;
+    transition: margin-left 0.5s;
+}
+div.artView>div.artGroup::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.artView>div.artGroup>div.article{
+    width: calc(100% / 12 - 20px);
+    margin: 0px 10px;
+    float: left;
+    height: 200px;
+}
+div.artView>div.artGroup>div.article:nth-child(1){
+    background-color: red;
+}
+div.artView>div.artGroup>div.article:nth-child(2){
+    background-color: orange;
+}
+div.artView>div.artGroup>div.article:nth-child(3){
+    background-color: yellow;
+}
+div.artView>div.artGroup>div.article:nth-child(4){
+    background-color: green;
+}
+div.artView>div.artGroup>div.article:nth-child(5){
+    background-color: blue;
+}
+div.artView>div.artGroup>div.article:nth-child(6){
+    background-color: blueviolet;
+}
+div.artView>div.artGroup>div.article:nth-child(7){
+    background-color: hotpink;
+}
+div.artView>div.artGroup>div.article:nth-child(8){
+    background-color: cornflowerblue;
+}
+div.artView>div.artGroup>div.article:nth-child(9){
+    background-color: darkslategray;
+}
+div.artView>div.artGroup>div.article:nth-child(10){
+    background-color: black;
+}
+div.artView>div.artGroup>div.article:nth-child(11){
+    background-color: blanchedalmond;
+}
+div.artView>div.artGroup>div.article:nth-child(12){
+    background-color: darkturquoise;
+}
+
+/* 3번 */
+div.artView02{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+div.artView02>div.artGroup02{
+    width: 500%;
+    transition: margin-left 0.5s;
+}
+div.artView02>div.artGroup02>div.article{
+    width: calc(100% / 5);
+    float: left;
+    height: 500px;
+}
+div.artView02>div.artGroup02>div.article:nth-child(1){
+    background-color: red;
+}
+div.artView02>div.artGroup02>div.article:nth-child(2){
+    background-color: orange;
+}
+div.artView02>div.artGroup02>div.article:nth-child(3){
+    background-color: yellow;
+}
+div.artView02>div.artGroup02>div.article:nth-child(4){
+    background-color: green;
+}
+div.artView02>div.artGroup02>div.article:nth-child(5){
+    background-color: blue;
+}
+div.artView02>ul.paging{
+    position: absolute;
+    bottom: 20px;
+    left: 450px;
+}
+div.artView02>ul.paging::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.artView02>ul.paging>li{
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    float: left;
+    margin: 0px 5px;
+    transition: width 0.5s;
+}
+div.artView02>ul.paging>li.on{
+    width: 40px;
+}
+
+/* 4번 */
+div.View03{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+div.View03>div.artGroup03{
+    width: 100%;
+    transition: all 0.5s;
+}
+div.View03>div.artGroup03::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.View03>div.artGroup03>div.article{
+    width: calc(100% / 3 - 20px);
+    height: 200px;
+    margin: 0px 10px;
+    float: left;
+    margin-top: 0;
+}
+div.View03>div.artGroup03>div.article:nth-child(1){
+    background-color: red;
+}
+div.View03>div.artGroup03>div.article:nth-child(2){
+    background-color: orange;
+}
+div.View03>div.artGroup03>div.article:nth-child(3){
+    background-color: yellow;
+}
+div.View03>div.artGroup03>div.article:nth-child(4){
+    background-color: green;
+}
+div.View03>div.artGroup03>div.article:nth-child(5){
+    background-color: blue;
+}
+div.View03>div.artGroup03>div.article:nth-child(6){
+    background-color: violet;
+}
+div.View03>div.artGroup03>div.article:nth-child(7){
+    background-color: aqua;
+}
+div.View03>div.artGroup03>div.article:nth-child(8){
+    background-color: black;
+}
+div.View03>div.artGroup03>div.article:nth-child(9){
+    background-color: burlywood;
+}
+div.View03>div.artGroup03>div.article:nth-child(10){
+    background-color: crimson;
+}
+div.View03>div.artGroup03>div.article:nth-child(11){
+    background-color: darkgray;
+}
+div.View03>div.artGroup03>div.article:nth-child(12){
+    background-color: greenyellow;
+}
+div.View03>ul.paging03{
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+}
+div.View03>ul.paging03>li{
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    margin: 5px 0px;
+    transition: height 0.5s;
+}
+div.View03>ul.paging03>li.on{
+    height: 40px;
+}

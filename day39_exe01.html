@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        /* div{
+            width: 50%;
+            height: 500px;
+            background-color: #ccc;
+        } */
+        button{
+            width: 100px;
+            height: 50px;
+            background-color: #ccc;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // $(function(){
+            // $('div').click(function(){
+            //     $(this).css('background-color','yellow');
+            // });
+            // $('div').on('mouseover',function(){
+            //     $(this).css('background-color','yellow');
+            // });
+            // $('div').on('mouseleave',function(){
+            //     $(this).css('background-color','#f00');
+            // });
+            // $('div').on('mousemove',function(){
+            //     $(this).css('background-color','blue');
+            // });
+        //     $('div').mouseover(function(){
+        //         $(this).css('background-color','yelloq');
+        //     });
+        //     $('div').mouseleave(function(){
+        //         $(this).css('background-color','#f00');
+        //     });
+        //     $('div').mousemove(function(){
+        //         $(this).css('background-color','blue');
+        //     });
+        // });
+
+        $(function(){
+            var i = 0;
+            $('button').click(function(){
+
+                i++;
+                console.log(i);
+                $('button').css({
+                    width: '100px',
+                    height: '50px',
+                    backgroundColor: '#ccc'
+                });
+                $(this).css({
+                    width: '200px',
+                    height: i * 100+'px',
+                    backgroundColor: 'yellow'
+                });
+                $(this).mouseleave(function(){
+                    i = 0;
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>버튼1</button>
+    <button>버튼2</button>
+    <button>버튼3</button>
+</body>
+</html>

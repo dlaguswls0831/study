@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+       button{
+           background-color: yellow;
+           font-size: 12px;
+           transition: all 0.5s;
+       }
+       /* button.show{
+           background-color: orange;
+           font-size: 42px;
+       } */
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            // $('div.top>button').eq(0).click(function(){
+            //     alert('버튼1번이 클릭된 상황입니다');
+            // });
+            // $('div.btm>button').first().next().click(function(){
+            //     alert('두번째 버튼입니다');
+            // });
+            $('button').click(function(){
+                $('button').css({
+                    backgroundColor: 'yellow',
+                    fontSize: '12px',
+                    transition: 'all 0.5s',
+                });
+                $(this).css({
+                    backgroundColor: 'orange',
+                    fontSize: '48px',
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="top">
+        <button>탑버튼1</button>
+        <button>탑버튼2</button>
+        <button>탑버튼3</button>
+    </div>
+    <div class="btm">
+        <button>바텀버튼1</button>
+        <button>바텀버튼2</button>
+        <button>바텀버튼3</button>
+    </div>
+</body>
+</html>

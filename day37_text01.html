@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+           $('button').click(function(){
+            var i = 0;
+            var dan = parseInt(prompt('단수를 입력하세요'));
+            while(i < 9){
+                i++;
+                console.log(dan + "*" + i + '=' + (dan*i));
+                }
+           });
+           $('div').click(function(){
+            alert('버튼2입니다');   
+           })
+        });
+    </script>
+</head>
+<body>
+    <button>버튼을 클릭하면 구구단 시작</button>
+    <div>버튼2</div>
+</body>
+</html>

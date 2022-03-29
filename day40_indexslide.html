@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide02</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+    div.artView{
+        width: 80%;
+        max-width: 1080px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+    div.artView>div.artGroup{
+        width: 500%;
+        transition: margin-left 0.5s;
+    }
+    div.artView>div.artGroup::after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+    div.artView>div.artGroup>div.article{
+        width: calc(100% / 5);
+        float: left;
+        height: 500px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    div.artView>div.artGroup>div.article:nth-child(1){
+        background-image: url('./images/bnr_p01.jpg');
+    }
+    div.artView>div.artGroup>div.article:nth-child(2){
+        background-image: url('./images/bnrbg.jpg');
+    }
+    div.artView>div.artGroup>div.article:nth-child(3){
+        background-image: url('./images/cnt01_pic01.jpg');
+    }
+    div.artView>div.artGroup>div.article:nth-child(4){
+        background-image: url('./images/cnt01_pic02.jpg');
+    }
+    div.artView>div.artGroup>div.article:nth-child(5){
+        background-image: url('./images/cnt01_pic03.jpg');
+    }
+    div.artView>ul{
+        width: 20%;
+        height: 20px;
+        position: absolute;
+        margin: auto;
+        left: 0;right: 0;bottom: 20px;
+    }
+    div.artView>ul.paging{}
+    div.artView>ul.paging::after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+    div.artView>ul.paging>li{
+        width: 20px;
+        height: 20px;
+        background-color: #fc0;
+        border-radius: 10px;
+        float: left;
+        margin: 0px 5px;
+        cursor: pointer;
+        transition: width 0.5s;
+    }
+    div.artView>ul.paging>li.show{
+        width: 40px;
+    }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            // 변수 i에 0을 대입
+            var i=0;
+            // li를 클릭하였을때, 함수(이벤트발생)
+            $('ul.paging>li').click(function(){
+                // li에 show라는 이름을 붙힌 css의 class를 가져와서
+                // removwclass로 show css 시트가 입혀진 li에서 show를 지워주고
+                // this를 사용하여 클릭된 그 자체에게 다시 show css 시트를 입혀준다
+                $('ul.paging>li').removeClass('show');
+                $(this).addClass('show');
+                // 변수 ind에 그 자체(this)에게 index 번호가 입혀진 함수가 대입
+                var ind = $(this).index();
+                // 'artGroup'에 css를 넣어서 li를 눌러주었을때 이미지가 뜨게 만들어준다
+                $('div.artGroup').css('margin-left',ind*-100+'%');
+                // i의 값은 ind값으로 반환이 되었고, i++이 되면 ind에 대입된 숫자가
+                // i에 대입이 되면서 +1이 되고 i--면 -1로 변환이 된다
+                i=ind;
+            });
+            // 첫번째 버튼을 DOM탐색하고, 클릭하였을때 함수(이벤트발생)
+            $('button').eq(0).click(function(){
+                // 변수 i에 대입된 값이 +1이 되고 다음줄로 넘어간다
+                i++;
+                // if를 선언하여 마지막 이미지에서 더이상 넘어가지 않도록 
+                // 마지막 이미지의 범위를 설정한다
+                if(i>4){
+                    i=4;
+                }
+                // 위에서 선언한 if를 기준으로 'artGroup'은 ind값이 대입된
+                // i에 -100%를 곱하여 인덱스 숫자가 부여된 아티클이 왼쪽으로 이동한다
+                $('div.artGroup').css('margin-left',i*-100+'%');
+                // li가 이동할때마다 width가 커지는데 선택된 li만 'show'css 시트가
+                // 입혀질수있도록 'removeClass'지워주었고
+                $('.paging>li').removeClass('show');
+                // i=ind라고 변환을 해주었기때문에 li는 아티클에 부여된 인덱스 숫자와 같기에
+                // 버튼을 클릭하면 li도 똑같이 페이징되면서 'show'값이 적용
+                $('.paging>li').eq(i).addClass('show');
+            });
+            $('button').eq(1).click(function(){
+                i--;
+                if(i<0){
+                    i=0;
+                }
+                $('div.artGroup').css('margin-left',i*-100+'%');
+                $('.paging>li').removeClass('show');
+                $('.paging>li').eq(i).addClass('show');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="artGroup">
+            <div class="article"></div>
+            <div class="article"></div>
+            <div class="article"></div>
+            <div class="article"></div>
+            <div class="article"></div>
+        </div>
+        <ul class="paging">
+            <li class="show"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <button>left</button>
+    <button>right</button>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day13_exe01.html</title>
+    <style>
+        td{
+            outline: 1px solid black; 
+        }
+    </style>
+</head>
+<body>
+    <!-- 블럭요소 -->
+    <h1>제목태그(hn태그)</h1>
+    <h2>제목태그(hn태그)</h2>
+    <h3>제목태그(hn태그)</h3>
+    <h4>제목태그(hn태그)</h4>
+    <h5>제목태그(hn태그)</h5>
+    <h6>제목태그(hn태그)</h6>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vitae non dolores. Vel, omnis? Praesentium, odio expedita est deserunt, labore, libero et dignissimos dolores maiores iste voluptatum ratione atque obcaecati!</p>
+
+    <ol>
+        <li>리스트1</li>
+        <li>리스트2</li>
+        <li>리스트3</li>
+        <li>리스트4</li>
+        <li>리스트5</li>
+    </ol>
+    <ul>
+        <li>리스트1</li>
+        <li>리스트2</li>
+        <li>리스트3</li>
+        <li>리스트4</li>
+        <li>리스트5</li>
+    </ul>
+
+    <!-- 설명(디스크립션 태그) -->
+    <dl>
+        <dt>설명타이틀</dt>
+        <dd>설명내용</dd>
+        <dd>설명내용</dd>
+        <dd>설명내용</dd>
+        <dt>설명타이틀</dt>
+        <dd>설명내용</dd>
+        <dd>설명내용</dd>
+        <dd>설명내용</dd>
+    </dl>
+
+    <div>div태그</div>
+
+    <!-- 줄(끝태그가 없다) -->
+    <hr>
+
+    <address>주소를 입력합니다.</address>
+
+<hr>
+    <!-- 인라인요소,옆으로 붙는다 -->
+    <b>굵은글씨표현태그</b>
+    <strong>굵은글씨표현태그2</strong>
+    <i>이탤릭 태그(기울림)</i>
+    <em>기울림태크</em>
+    
+    <!-- 페이지이동태그,blank는 새창을 띄워서 다른페이지로 이동시켜준다 -->
+    <a href="https://www.naver.com/" target="_blank">네이버로 이동</a> 
+    <a href="./day11_exe01.html">다른파일로 이동</a>
+    
+    <!-- 이미지태그,끝태그없음 (파일이름을 공통으로 쓰고 숫자로 구분하면 좋다) -->
+    <!-- src는 이미지파일을 가져옴, art는 나중에 장애인을 위한 곳에서 이미지를 설명으로 읽어준다 -->
+    <img src="./images/pic01.jpg" alt="나비 물고기">
+    <img src="./images/pic02.jpg" alt="니모 물고기">
+
+    <!-- 옆에 붙는 요소들 중 구역을 나누고 싶을때 -->
+    <span>인라인계의 div</span>
+
+    <!-- 입력바,끝태그없음 -->
+    <input type="text">
+    <input type="password">
+    <input type="checkbox">
+
+    <small>작은글씨</small>
+    <sup>위에첨자</sup>
+    <sub>아래첨자</sub>
+
+<hr>
+<!-- tr(줄),td(칸)만 들어오는 표요소 -->
+    <table>
+        <tr>
+            <td colspan="2">제목1</td>
+            <td rowspan="2">제목3</td>
+        </tr>
+        <tr>
+            <td>내용1</td>
+            <td>내용2</td>
+        </tr>
+    </table>
+<hr>
+    <table>
+        <tr>
+            <td>제목</td>
+            <td>제목</td>
+            <td>제목</td>
+            <td>제목</td>
+        </tr>
+        <tr>
+            <td colspan="2">내용</td>
+            <td colspan="2">내용</td>
+        </tr>
+        <tr>
+            <td rowspan="2">내용</td>
+            <td>내용</td>
+            <td rowspan="2">내용</td>
+            <td>내용</td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td>내용</td>
+        </tr>
+    </table>
+<hr>
+<table>
+    <tr>
+        <td colspan="2">제목</td>
+        <td>제목</td>
+        <td>제목</td>
+    </tr>
+    <tr>
+        <td rowspan="3">내용</td>
+        <td>내용</td>
+        <td>내용</td>
+        <td>내용</td>
+    </tr>
+    <tr>
+        <td colspan="3">내용</td>
+    </tr>
+    <tr>
+        <td colspan="2">내용</td>
+        <td>내용</td>
+</tr>
+</table>
+<hr>
+
+<!-- from안에 input 태그 -->
+<form action="">
+    <label for="">아이디</label><input type="text">
+    <label for="">패스워드</label><input type="password">
+    <!-- 텍스트 뜯을때 br 태그 -->
+    <br>
+    <label for="">전화번호</label><input type="number">
+    <label for="">이메일</label><input type="email">
+    <br>
+    <input type="submit" value="제출하기">
+    <input type="button" value="버튼">
+    <input type="reset" value="되돌리기">
+    <br>
+    <label for="">농구</label><input type="checkbox" name="sports">
+    <label for="">야구</label><input type="checkbox" name="sports">
+    <label for="">축구</label><input type="checkbox" name="sports">
+    <label for="">배구</label><input type="checkbox" name="sports">
+    <br>
+    <label for="apple">사과</label><input type="radio" name="fruits" id="apple">
+    <label for="sw">딸기</label><input type="radio" name="fruits" id="sw">
+    <label for="po">포도</label><input type="radio" name="fruits" id="po">
+    <label for="be">배</label><input type="radio" name="fruits" id="be">
+
+    <select name="" id="">
+        <option value="apple">사과</option>
+        <option value="strawberry">딸기</option>
+        <option value="pe">배</option>
+        <option value="ban">바나나</option>
+    </select>
+
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+</form>
+
+<!-- 선을 만들어주는 태그 -->
+<fieldset>
+    <legend>로그인</legend>
+    <form action="">
+        <label for="">&lt;아이디&gt;</label><input type="text" placeholder="아이디를 입력하세요">
+        <label for="">&quot;패스워드</label><input type="password">
+        <input type="submit" value="로그인">
+    </form>
+</fieldset>
+<br>
+<hr>
+
+<!-- 로그인 -->
+<fieldset>
+    <legend>로그인</legend>
+   <form action="">
+     <label for="">아이디:</label><input type="text"  placeholder="아이디를 입력해주세요">
+  <br>
+     <label for="">비밀번호:</label><input type="password">
+  <br>
+     <input type="submit" value="로그인">
+     <input type="button" value="회원가입">
+     <input type="reset" value="다시입력">
+   </form>
+</fieldset>
+
+<!-- 회원가입 -->
+<fieldset>
+    <legend>회원가입</legend>
+    <form action="">
+         <label for="">이름:</label><input type="text"  placeholder="이름을 입력해주세요">
+     <br>
+         <label for="">나이:</label><input type="number">
+     <br>
+         <label for="">성별:</label>
+         <input type="radio" name="human" id="남자"><label for="남자">남자</label>
+         <input type="radio" name="human" id="여자"><label for="여자">여자</label>
+         <br>
+         <label for="">이메일:</label><input type="email">
+     <br>
+         <label for="">좋아하는음식:</label>
+         <input type="checkbox" name="food"><label for="">한식</label>
+         <input type="checkbox" name="food"><label for="">중식</label>
+         <input type="checkbox" name="food"><label for="">일식</label>
+         <input type="checkbox" name="food"><label for="">양식</label>
+     <br>
+         <label for="">가입요청 메세지:</label>
+     <br>
+         <textarea name="" id="" cols="30" rows="10" placeholder="가입메세지를 입력해주세요"></textarea>
+     <br>
+         <input type="button" value="회원가입">
+         <input type="reset" value="다시입력">
+         <input type="button" value="버튼">
+    </form>
+</fieldset>
+
+</body>
+</html>

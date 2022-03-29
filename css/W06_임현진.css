@@ -1,0 +1,540 @@
+/* mntop */
+div.mntopWrap{
+    background-color: #000;
+    color: #fff;
+}
+div.mntopWrap>div.menuTop{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+div.mntopWrap>div.menuTop::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.mntopWrap>div.menuTop>div.info{
+    float: left;
+}
+div.mntopWrap>div.menuTop>div.info>h4{
+    float: left;
+    margin-right: 30px;
+}
+div.mntopWrap>div.menuTop>ul.nav{
+    float: right;
+}
+div.mntopWrap>div.menuTop>ul.nav>li{
+    float: left;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+
+/* hdr */
+div.hdrWrap{}
+div.hdrWrap>div.header{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    line-height: 80px;
+    text-transform: uppercase;
+    color: #fff;
+}
+div.hdrWrap>div.header::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.hdrWrap>div.header>h1{
+    float: left;
+    font-size: 24px;
+}
+div.hdrWrap>div.header>h1>b{}
+div.hdrWrap>div.header>ul.nav{
+    float: right;
+}
+div.hdrWrap>div.header>ul.nav>li{
+    float: left;
+    margin-left: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* main */
+div.mainWrap{
+    background-color: #000;
+    color: #fff;
+    margin-top: -80px;
+}
+div.mainWrap>div.main{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-top: 280px;
+    padding-bottom: 70px;
+}
+div.mainWrap>div.main>div.texts{}
+div.mainWrap>div.main>div.texts>h2{
+    font-size: 45px;
+    line-height: 60px;
+}
+div.mainWrap>div.main>div.texts>p{
+    width: calc(100% / 12 * 5.5);
+    font-size: 12px;
+    line-height: 20px;
+    height: 80px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+div.mainWrap>div.main>div.btns{
+    margin-top: 70px;
+}
+div.mainWrap>div.main>div.btns::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.mainWrap>div.main>div.btns>div.btn:hover{
+    background-color: #fc0;
+}
+div.mainWrap>div.main>div.btns>div.btn{
+    width: calc(100% / 4 - 20px);
+    float: left;
+    margin: 0 10px;
+    background-color: #fff;
+    color: #000;
+    line-height: 60px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+/* 특수한 케이스여서 컬럼과 궈터가 총 5칸이라서 등분을 해주어 양옆 가운데를 배치시켰다 */
+div.mainWrap>div.main>div.btns>div.btn>i{
+    display: block;
+    float: left;
+    width: calc(100% / 5);
+    line-height: 60px;
+    text-align-last: left;
+    padding-left: 20px;
+    font-size: 20px;
+}
+div.mainWrap>div.main>div.btns>div.btn>i:nth-child(3){
+    text-align: right;
+    padding-left: 0;
+    padding-right: 20px;
+}
+div.mainWrap>div.main>div.btns>div.btn:nth-child(1)~div.btn>i:nth-child(3){
+    color: #ccc;
+}
+div.mainWrap>div.main>div.btns>div.btn>span{
+    display: block;
+    width: calc(100% / 5 * 3);
+    float: left;
+}
+
+
+/* cnt 공통 */
+div.cntWrap{
+    margin-top: 120px;
+}
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content>div.header{}
+div.cntWrap>div.content>div.header h2{}
+div.cntWrap>div.content>div.section{
+    margin-top: 40px;
+}
+div.cntWrap>div.content>div.section div.article{}
+div.cntWrap>div.content>div.section div.article>div.image{
+    background-color: #ccc;
+}
+
+
+/* cnt01 */
+div.cntWrap>div.content.cnt01{}
+div.cntWrap>div.content.cnt01>div.header{}
+/* hdr-left */
+div.cntWrap>div.content.cnt01>div.header::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt01>div.header>div.hdrLeft{
+    width: calc(100% / 12 * 8);
+    line-height: 80px;
+}
+div.cntWrap>div.content.cnt01>div.header>div.hdrLeft>h2{
+    float: left;
+    font-size: 48px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+div.cntWrap>div.content.cnt01>div.header>div.hdrLeft>ul.tab{
+    float: left;
+    width: calc(100% / 8 * 6.5);
+    margin-left: 20px;
+}
+div.cntWrap>div.content.cnt01>div.header>div.hdrLeft>ul.tab>li{
+    float: left;
+    font-size: 12px;
+    width: calc(100% / 7);
+    text-align: center;
+    cursor: pointer;
+}
+div.cntWrap>div.content.cnt01>div.header>div.hdrLeft>ul.tab>li:hover:after{
+    content: '';
+    display: block;
+    background-color: #fc0;
+    height: 8px;
+    margin-top: -20px;
+}
+/* hdr-right */
+div.cntWrap>div.content.cnt01>div.header>div.hdrRight{
+    width: calc(100% / 12 * 2);
+    float: right;
+}
+div.cntWrap>div.content.cnt01>div.header>div.hdrRight>div.btn{
+    float: left;
+    font-size: 25px;
+    line-height: 60px;
+    outline: 1px solid #ccc;
+    width: calc(100% / 3);
+    text-align: center;
+    font-weight: 700;
+    color: #ccc;
+    cursor: pointer;
+}
+div.cntWrap>div.content.cnt01>div.header>div.hdrRight>div.btn>i:hover{
+    color: #000;
+}
+div.cntWrap>div.content.cnt01>div.header>div.hdrRight>div.btn>i{}
+div.cntWrap>div.content.cnt01>div.section{}
+div.cntWrap>div.content.cnt01>div.section::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt01>div.section>div.article{
+    width: calc(100% / 3 - 20px);
+    float: left;
+    margin: 0px 10px;
+    outline: 1px solid #ccc;
+}
+/* cnt01-img */
+div.cntWrap>div.content.cnt01>div.section>div.article>div.image{
+    height: 200px;
+
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.image.i1{}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.image.i2{}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.image.i3{}
+/* cnt01-txt */
+div.cntWrap>div.content.cnt01>div.section>div.article>div.texts{
+    padding-top: 15px;
+    padding-left: 30px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.texts>h5{
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.texts>h3{
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.texts>p{
+    width: calc(100% / 4 * 3.5);
+    font-size: 12px;
+    line-height: 20px;
+    height: 80px;
+    overflow: hidden;
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.texts>div.btn{
+    width: calc((100% / 4) + 10px);
+    margin-top: 40px;
+    background-color: #7d7d7d;
+    margin-left: auto;
+    text-align: center;
+    line-height: 40px;
+    font-size: 35px;
+    font-weight: 700;
+    cursor: pointer;
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.texts>div.btn:hover{
+    background-color: #fc0;
+    color: #fff;
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.texts>div.btn>i{}
+
+
+/* cnt02 */
+div.cntWrap>div.content.cnt02{}
+div.cntWrap>div.content.cnt02>div.header{}
+div.cntWrap>div.content.cnt02>div.header::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+/* cnt02-hdrleft */
+div.cntWrap>div.content.cnt02>div.header>div.hdrLeft{
+    width: calc(100% / 12 * 4.5);
+    float: left;
+}
+div.cntWrap>div.content.cnt02>div.header>div.hdrLeft>h2{
+    font-size: 48px;
+    line-height: 40px;
+    font-weight: 700;
+}
+div.cntWrap>div.content.cnt02>div.header>div.hdrLeft>h5{
+    font-size: 14px;
+    line-height: 40px;
+    margin-top: 15px;
+}
+/* cnt02-hdrRight */
+div.cntWrap>div.content.cnt02>div.header>div.hdrRight{
+    width: calc(100% / 12 * 1.5);
+    float: right;
+    font-size: 14px;
+    line-height: 50px;
+    outline: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+}
+div.cntWrap>div.content.cnt02>div.section{}
+div.cntWrap>div.content.cnt02>div.section>div.article{
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article:nth-child(1){
+    margin-top: 0;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts{
+    width: calc((100% / 12 * 9) - 20px);
+    float: left;
+}
+/* cnt02-txtleft */
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>div.txtLeft{
+    width: calc(100% / 9 * 2);
+    float: left;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>div.txtLeft>div.secore{
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>div.txtLeft>div.secore::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>div.txtLeft>div.secore>h3{
+    float: left;
+    font-size: 45px;
+    color: #fc0;
+    line-height: 80px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>div.txtLeft>div.secore>h5{
+    float: left;
+    font-size: 12px;
+    text-transform: capitalize;
+    line-height: 40px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>div.txtLeft>h5{
+    font-size: 12px;
+    line-height: 20px;
+}
+/* cnt02-txtRight */
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>div.txtRight{
+    width: calc(100% / 9 * 6.9);
+    float: left;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>div.txtRight>h3{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 40px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>div.txtRight>p{
+    font-size: 12px;
+    line-height: 20px;
+    height: 60px;
+    overflow: hidden;
+}
+/* cnt02-img */
+div.cntWrap>div.content.cnt02>div.section>div.article>div.image{
+    width: calc(100% / 12 * 3);
+    height: 120px;
+    float: right;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.image.i1{}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.image.i2{}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.image.i3{}
+
+
+/* bnr 공통 */
+div.bnrWrap{
+    margin-top: 120px;
+}
+div.bnrWrap>div.banner{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+
+/* bnr01 */
+div.bnrWrap.bnrWrap01{
+    background-color: #fc0;
+}
+div.bnrWrap.bnrWrap01>div.banner.bnr01{
+    padding: 80px 0px;
+    font-weight: 700;
+}
+div.bnrWrap.bnrWrap01>div.banner.bnr01>h2{
+    font-size: 48px;
+    text-align: center;
+    line-height: 80px;
+}
+div.bnrWrap.bnrWrap01>div.banner.bnr01>p{
+    width: calc(100% / 12 * 8);
+    font-size: 12px;
+    line-height: 20px;
+    height: 40px;
+    text-align: center;
+    margin: 0 auto;
+}
+div.bnrWrap.bnrWrap01>div.banner.bnr01>div.btn{
+    width: calc((100% / 12 * 2) - 25px);
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: center;
+    background-color: #fff;
+    line-height: 50px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+
+/* bnr02 */
+div.bnrWrap.bnrWrap02{
+    background-color: #7da5d6;
+    color: #fff;
+}
+div.bnrWrap.bnrWrap02>div.banner.bnr02{
+    padding: 120px 0px;
+}
+div.bnrWrap.bnrWrap02>div.banner.bnr02::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.bnrWrap.bnrWrap02>div.banner.bnr02>div.texts{
+    float: left;
+    width: calc(100% / 12 * 7);
+}
+div.bnrWrap.bnrWrap02>div.banner.bnr02>div.texts>h2{
+    font-size: 48px;
+    line-height: 50px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+div.bnrWrap.bnrWrap02>div.banner.bnr02>div.texts>h5{
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 40px;
+}
+div.bnrWrap.bnrWrap02>div.banner.bnr02>div.texts>p{
+    font-size: 12px;
+    line-height: 20px;
+    height: 60px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+div.bnrWrap.bnrWrap02>div.banner.bnr02>div.texts>div.btn{
+    width: calc(100% / 12 * 2);
+    margin-top: 40px;
+    background-color: #f39800;
+    line-height: 40px;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+div.bnrWrap.bnrWrap02>div.banner.bnr02>div.image{
+    width: calc(100% / 12 * 4);
+    height: 240px;
+    background-color: #ccc;
+    float: right;
+}
+
+
+/* ftr */
+div.ftrWrap{
+    background-color: #333;
+    color: #fff;
+}
+div.ftrWrap>div.footer{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 40px 0px 80px;
+    font-size: 12px;
+}
+div.ftrWrap>div.footer::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.ftrWrap>div.footer>div.info{
+    width: calc(100% / 4 - 20px);
+    float: left;
+    margin: 0px 10px;
+}
+div.ftrWrap>div.footer>div.info>h4{}
+div.ftrWrap>div.footer>div.info>h4:nth-child(1){
+    line-height: 40px;
+    text-transform: capitalize;
+}
+div.ftrWrap>div.footer>div.info>h4:nth-child(2){
+    line-height: 20px;
+}
+div.ftrWrap>div.footer>div.info>p{
+    line-height: 13px;
+    height: 40px;
+    overflow: hidden;
+    margin-top: 40px;
+}
+div.ftrWrap>div.footer>ul{
+    width: calc(100% / 4 - 20px);
+    float: left;
+    margin: 0px 10px;
+}
+div.ftrWrap>div.footer>ul>li:nth-child(1){
+    line-height: 40px;
+    text-transform: capitalize;
+}
+div.ftrWrap>div.footer>ul>li:nth-child(2){
+    margin-top: 20px;
+}
+div.ftrWrap>div.footer>ul>li{
+    line-height: 20px;
+}
+div.ftrWrap>div.footer>ul:nth-child(4)>li:nth-child(1)~li{
+    margin-left: 20px;
+}

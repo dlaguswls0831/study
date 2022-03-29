@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아코디언실습</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        ul{
+            width: 50%;
+            margin: 100px auto;
+        }
+        ul>li:nth-child(odd){
+            line-height: 40px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        ul>li:nth-child(odd).show+li{
+            height: 120px;
+        }
+        ul>li:nth-child(even){
+            font-size: 14px;
+            line-height: 20px;
+            padding: 0px 20px;
+            height: 0px;
+            overflow: hidden;
+            transition: height 0.5s;
+        }
+        ul>li:nth-child(even)>p{
+            margin-top: 40px;
+            height: 40px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // 로딩시켜주는 제이쿼리 공식
+        $(function(){
+            $('ul>li').first().css({
+                backgroundColor: 'red'
+            });
+            $('ul>li').even().click(function(){
+                $('ul>li').even().css({
+                    lineHeight: '40px',
+                    backgroundColor: '#333',
+                    color: '#fff',
+                    textAlign: 'center',
+                    textTransform: 'uppercase'
+                });
+                $(this).css({
+                    backgroundColor: 'red',
+                    transition: 'all 0.5s'
+                });
+                $('ul>li').removeClass('show');
+                $(this).addClass('show');
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li class="show">title</li>
+        <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas odio fugiat, nulla magni molestiae quaerat corporis autem et! Adipisci nulla neque molestias facilis quibusdam pariatur minima maxime eaque consequuntur deserunt?</p></li>
+        <li>title</li>
+        <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas odio fugiat, nulla magni molestiae quaerat corporis autem et! Adipisci nulla neque molestias facilis quibusdam pariatur minima maxime eaque consequuntur deserunt?</p></li>
+        <li>title</li>
+        <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas odio fugiat, nulla magni molestiae quaerat corporis autem et! Adipisci nulla neque molestias facilis quibusdam pariatur minima maxime eaque consequuntur deserunt?</p></li>
+        <li>title</li>
+        <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas odio fugiat, nulla magni molestiae quaerat corporis autem et! Adipisci nulla neque molestias facilis quibusdam pariatur minima maxime eaque consequuntur deserunt?</p></li>
+        <li>title</li>
+        <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas odio fugiat, nulla magni molestiae quaerat corporis autem et! Adipisci nulla neque molestias facilis quibusdam pariatur minima maxime eaque consequuntur deserunt?</p></li>
+    </ul>
+</body>
+</html>

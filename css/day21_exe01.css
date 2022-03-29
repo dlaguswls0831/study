@@ -1,0 +1,469 @@
+/* mntop */
+div.mntopWrap{
+    background-color: #000;
+}
+div.mntopWrap>div.menuTop{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    /* 텍스트는 라인하이트로 지정해야해서 값을 넣었습니다 */
+    line-height: 40px;
+    /* mntop는 위에서 한칸 영역을 가지고 있어서
+    라인하이트 40px값을 넣었습니다*/
+    font-size: 20px;
+    color: #fff;
+}
+div.mntopWrap>div.menuTop>div.logos{
+    /* float는 left만 사용하기 위해서 왼쪽으로 먼저 로고의 위치를 잡아준다 */
+    float: left;
+}
+div.mntopWrap>div.menuTop>div.logos>i{}
+div.mntopWrap>div.menuTop>ul.nav{
+    /* logos와 nav를 양 끝에 가로 정렬하기위해 nav에는 right값을 준다
+    여기서 바로 right를 주면 li가 순서가 반대로 정렬이 된다 주의할것! */
+    float: right;
+    font-size: 20px;
+}
+div.mntopWrap>div.menuTop>ul.nav>li{
+    /* li의 요소들도 가로정렬해주기 위해 left를 주었다 */
+    /* nav의 li에 오른쪽 값을 바로 줘버리면 순서가 거꾸로 나오기에
+    차근차근 부모요소에서부터 가로정렬값을 주는 것을 기억해야한다. */
+    float: left;
+    /* 왼쪽으로 여백이 20px씩 있어서 값을 널었습니다. */
+    margin-left: 20px;
+    cursor: pointer;
+    /* 마우스를 가져갔을때 클릭하는 커서 모션을 넣기 위해 값을 넣었습니다. */
+}
+/* float는 가상요소를 만들어 끝맺음을 해줘야 하기에
+부모요소의 다음 가상요소를 만들어 플롯값을 빼준다. */
+div.mntopWrap>div.menuTop::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+
+/* hdr */
+div.hdrWrap{
+    background-color: rgb(255, 82, 82);
+    color: #fff;
+}
+div.hdrWrap>div.header{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    /* 텍스트의 높이는 라인하이트를 쓰기에 값을 넣었습니다 */
+    line-height: 80px;
+    /* 메뉴탑 아래로 두칸의 영역을 가지고 있어 80px값을 넣었습니다  */
+}
+/* 가로정렬을 하기위해 h1에 float-left값을 먼저 넣어 부유시켜주고
+형재요소인 nav를 right값을 주어 오른쪽끝으로 가로정렬한다.
+그리고 li들에게도 가로정렬을 주어 가지런히 만들어주었다.
+부모요소에 가상요소를 추가하여 플롯값을 끝맺음 해주었습니다. */
+div.hdrWrap>div.header>h1{
+    float: left;
+    font-size: 20px;
+    text-transform: uppercase;
+    /* 알파벳을 대문자로 전부 바꾸기 위해 값을 넣었습니다. */
+}
+div.hdrWrap>div.header>h1>b{}
+div.hdrWrap>div.header>ul.nav{
+    /* 오른쪽 끝으로 가로 정렬을 하기위해 값을 넣었습니다 */
+    float: right;
+}
+div.hdrWrap>div.header>ul.nav>li{
+    float: left;
+     /* 왼쪽으로 여백이 50px씩 있어서 값을 널었습니다. */
+    margin-left: 50px;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    /* 알파벳 모두 대문자로 바꿔주고, 
+    마우스 커서로 클릭하는 모션이 뜨도록 값을 넣어주었습니다. */
+}
+div.hdrWrap>div.header::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.hdrWrap>div.header>ul.nav>li>i{}
+
+
+
+/* cnt 공통 */
+div.cntWrap{}
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content div.header{}
+div.cntWrap>div.content div.header>h2{
+    /* 컨텐츠 해더부분에 h2가 모두 라인하이트 80px가 들어가서 공통영역으로 잡아주었습니다 */
+    line-height: 80px;
+    /* h2가 위에서 2칸 차지하고 있어서 값을 넣었습니다 */
+    text-align: center;
+    /* 텍스트를 가운데 정렬하기위해 값을 넣었습니다 */
+    font-size: 25px;
+    font-weight: 700;
+}
+div.cntWrap>div.content div.header>p{
+    /* 컨텐츠 해더부분 p태그가 컨텐츠 모두 높이가 같아서 공통영역으로 잡아주었습니다 */
+    height: 40px;
+    line-height: 20px;
+    font-size: 12px;
+    overflow: hidden;
+    /* 설정한 h값만큼만 텍스트를 보이게 하기위해 넘친 텍스트는 ovh속성으로 숨겨주었습니다. */
+    text-align: center;
+    /* 텍스트박스는 높이와 라인하이트를 같이 넣어줘야해서 위에서 한칸 영역을 가지고 있어
+    h값을 40px를 주었고 라인하이트를 20px주었습니다. */
+    margin: 0 auto;
+    /* 텍스트박스를 부모요소 안에서 가운데정렬해주기위해 값을 넣었습니다.*/
+}
+div.cntWrap>div.content div.section{
+    /* 컨텐츠 해더로부터 공통적으로 색션이 80px 떨어져 있어서 값을 넣었습니다. */
+    margin-top: 80px;
+}
+div.cntWrap>div.content>div.section div.article{
+   /* 12그리드시스템을 사용하여 컬럼12,궈터12로 이루어져 있는데
+   컬럼1개는 양쪽끝에 10px씩 숨어져있어 한쪽으로 치우치지 않게끔 값을 넣었습니다 */
+    margin: 0px 10px;
+}
+div.cntWrap>div.content>div.section div.article>div.image{
+    background-color: #ccc;
+}
+div.cntWrap>div.content>div.section div.article>div.texts{
+    text-align: center;
+    /* 거의 모든 컨텐츠 텍스트가 가운데 정렬이어서 공통영역으로 잡았습니다. */
+}
+div.cntWrap>div.content>div.section div.article>div.texts>h3{
+    /* 아티클 텍스트의 모든 h3,h5,p의 값이 같아 공통영역으로 잡아주었습니다
+    허나, 컨텐츠 2번의 p태그만 높이가 달라 컨텐츠 2번의 아티클 p태그 선택자에 
+    따로 값을 넣었습니다. */
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: capitalize;
+    /* 띄어쓰기한 첫알파벳만 대문자로 바꾸기 위해 값을 넣었습니다 */
+}
+div.cntWrap>div.content>div.section div.article>div.texts>h5{
+    line-height: 40px;
+    font-size: 12px;
+    font-weight: 700;
+    /* 폰트의 굵기를 주기위에 값을 넣었습니다. */
+}
+div.cntWrap>div.content>div.section div.article>div.texts>p{
+    line-height: 20px;
+    height: 80px;
+    font-size: 12px;
+    overflow: hidden;
+    /* 택스트 박스는 라인하이트,h값을 모두 입력해줘야 하고 h값만큼만 
+    텍스트가 보이게 하기 위해서 흘러넘친 내용을 ovh로 숨깁니다. */
+}
+div.cntWrap>div.content>div.section div.article>div.texts>div.sns{
+    font-size: 20px;
+    line-height: 40px;
+}
+div.cntWrap>div.content>div.section div.article>div.texts>div.sns>i{}
+
+
+
+/* cnt01 */
+div.cntWrap:nth-child(3){
+    /* 컨텐츠마다 마진탑값이달라서 바디의자식-3번으로 선택하여 값을 넣었습니다.*/
+    margin-top: 160px;  
+}
+div.cntWrap>div.content.cnt01{}
+div.cntWrap>div.content.cnt01>div.header{}
+div.cntWrap>div.content.cnt01>div.header>h2{}
+div.cntWrap>div.content.cnt01>div.header>p{
+    /* 해더의 p태그 부모요소보다 작아야해서 W값을 넣었습니다.*/
+    width: calc(100% / 12 * 4.5);
+    /* 해더의 p태그는 그리드 안에 4칸하고 반을 차지하여 
+    부모요소 100%를 12칸으로 나눠 4.5칸의 값을 입력하였습니다 */
+}
+div.cntWrap>div.content.cnt01>div.section{}
+/* arttop */
+div.cntWrap>div.content.cnt01>div.section>div.artTop{}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article{
+    /* float을 줘서 가로 정렬을 할것이고 이때 아티클의 너비는 
+    그리드 안에 절반씩 차지하고 있어 부모 요소의 50%씩 주었고
+    아티클의 W값이 520px이고 띄워진 궈터 값이 20px여서 값을 입력하였습니다 */
+    width: calc(50% - 20px);
+    /* 아트탑 아티클 2개를 가로정렬하기 위해 float-left 값을 넣었고
+    아티클의 부모요소인  아트탑에 가상요소를 만들어서 플롯의 끝맺음을 하였습니다*/
+    float: left;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article>div.image{
+    /* 마퀴툴로 잰 이미지의 값을 넣었습니다 */
+    height: 320px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article>div.texts{
+    /* 텍스트박스가 위 이미지로부터 20px 떨어져 있고 왼쪽으로부터 50px 안으로 들어가 있어서
+    전체를 6칸으로 나눈다음 한칸안에 반칸 떨어져있어 0.5값을 넣었습니다. */
+    padding-top: 20px;
+    padding-left: calc(100% / 6 * 0.5);
+    /* 여기에 왼쪽정렬을 하지 않는 이유는 가끔 오류가 생길수있기에
+    각각 차근히 값을 넣어주었습니다. */
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article>div.texts>h3{
+    text-align: left;
+    /* 공통영역에서 모든h3태그를 가운데 정렬하였지만 
+    아트탑에서는 왼쪽에 위치해 있기에 값을 넣었습니다. */
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article>div.texts>h5{
+    text-align: left;
+    /* 공통영역에서 모든h5태그를 가운데 정렬하였지만 
+    아트탑에서는 왼쪽에 위치해 있기에 값을 넣었습니다. */
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article>div.texts>p{
+    /* 부모영역보다 p태그가 작아야 하므로 부모영역인 6칸에서 3.5차지하고 있어 값을 입력하였습니다  */
+    width: calc(100% / 6 * 3.5);
+    text-align: left;
+    /* 공통영역에서 모든p태그를 가운데 정렬하였지만 
+    아트탑에서는 왼쪽에 위치해 있기에 값을 넣었습니다. */
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article>div.texts>div.sns{
+    /* 텍스트 아이콘이어서 라인하이트로 높이를 주었습니다. */
+    line-height: 40px;
+    text-align: left;
+    /* 공통영역에서 모든 sns태그를 가운데 정렬하였지만 
+    아트탑에서는 왼쪽에 위치해 있기에 값을 넣었습니다. */
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article>div.texts>div.sns>i{}
+/* artbtm */
+div.cntWrap>div.content.cnt01>div.section>div.artBtm{
+   /* 아트탑과 아트바텀은 40px 떨어져있어 값을 넣었습니다. */
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm>div.article{
+    /* float를 줘서 가로정렬을 할 것이고 부모요소의 전체를 3으로 나눈 영역에서 
+    궈터 20px를 뺀 것이 아티클 영역이라 생각하여 값을 입력하였습니다 */
+    width: calc(100% / 3 - 20px);
+    /* 아트바텀 아티클 3개를 가로정렬하기 위해 float-left 값을 넣었고
+    아티클의 부모요소인  아트바텀에 가상요소를 만들어서 플롯의 끝맺음을 하였습니다
+    그럼 아트바텀 아래로 플롯값이 끝나 원래 레이아웃으로 돌아옵니다.*/
+    float: left;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm>div.article>div.image{
+    /* 마퀴툴로 잰 이미지의 값을 넣었습니다 */
+    height: 340px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm>div.article>div.texts{
+    /* 바텀값이 없어서 패딩 0px를 주었고 
+    좌우 20px 위로 20px 떨어져있어 값을 넣었습니다.*/
+    padding: 20px 20px 0px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm>div.article>div.texts>h3{}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm>div.article>div.texts>p{}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm>div.article>div.texts>div.sns{
+    /* 텍스트 아이콘이어서 라인하이트로 높이를 주었습니다. */
+    line-height: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm>div.article>div.texts>div.sns>i{}
+
+
+
+/* cnt02 */
+div.cntWrap:nth-child(4){
+    /* 컨텐츠2는 바디의 4번째 자식이기에 선택자로 마진탑 값을 주었습니다. */
+    margin-top: 120px;
+}
+div.cntWrap>div.content.cnt02{
+    /* 해더의 백그라운드 컬러를 뷰포트에 가득차게 설정하기 위해
+    컨텐츠 공통영역에서 잡아둔 W80%와 max-width 1080을 뷰포트에 맞게
+    풀어주었습니다. */
+    width: 100%;
+    max-width: 100%;
+}
+div.cntWrap>div.content.cnt02>div.header{
+    /* 백그라운드 컬러가 있어서 패딩값을 넣어줍니다
+    컨턴츠타이틀로부터 위로 4칸하고 20px 영역이고, px태그 아래로 280px 넣었습니다.*/
+    background-color: rgb(255, 60, 60);
+    padding-top: 180px;
+    padding-bottom: 280px;
+}
+div.cntWrap>div.content.cnt02>div.header>h2{}
+div.cntWrap>div.content.cnt02>div.header>p{
+    /* 부모요소보다 p태그가 작아야 함으로 w 값을 넣었습니다. */
+    width: calc(100% / 12 * 8);
+    /* 텍스트 영역이 w700px이므로 값을 넣었습니다. */
+    max-width: 700px;
+    /* 부모요소인 해더의 전체를 12개로 나누어서 p태그가 차지하고 있는 8칸의 영역을 곱했습니다 */
+    overflow: hidden;
+
+}
+div.cntWrap>div.content.cnt02>div.section{
+    /* 헤더에 100%값을 주고 영역을 풀어 뷰포트에 백그라운드 컬러가 가득차 보이도록 설정 할 것이고
+    색션은 그리드안으로 들어가있기에 다시 값을 넣었습니다. */
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    /* 섹션이 해더의 영역 위로 올라왔기에 마진탑에 마이너스 값을 주어 위로 올렸습니다. */
+    margin-top: -200px;
+    /* 섹션박스에는 그림자가 있어 값을 설정하였습니다. */
+    box-shadow: 2px 2px 4px #ccc;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article{
+    /* 마진값을 0으로 주어서 공통영역에서 주었던 좌우 10px값을 없애주었습니다. */
+    margin: 0;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.image{
+    /* 이미지와 텍스트가 부모요소인 아티클의 영역을 
+    반반씩 차지하고 있다고 생각하여 값을 입력하였습니다 */
+    width: 50%;
+    /* 마퀴툴로 잰 이미지 h값입니다 */
+    height: 400px;
+    /* 이미지 바로 옆에 텍스트가 올 수 있도록 가로 정렬하기 위해 값을 입력하였습니다. */
+    float: left;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts{
+    width: 50%;
+    float: left;
+    /* 텍스트박스는 패딩값으로 넣어줘야 하고 위,아래 80px 떨어졌으며 
+    양끝에 한칸씩 떨어져있어서 값을 넣었습니다. 한칸 떨어질땐 *1은 굳이 안 넣습니다.*/
+    padding: 80px calc(100% / 12);
+    background-color: #fff;
+}
+/* 하나의 아티클안에 이미지와 텍스트를 가로정렬하기위해 똑같은 W값을 넣어주고
+float-left값을 넣었습니다. 그리고 부모인 아티클에 가상요소를 만들어 플롯의 끝맺음을 하였습니다.*/
+div.cntWrap>div.content.cnt02>div.section>div.article::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>h3{}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>h5{}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>p{
+    /* 컨텐츠 공통영역에서 한번 설정하였지만 컨텐츠 2번의 p태크만 h값이 달라
+    입력해주어 우선순위를 가졌습니다. */
+    height: 100px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>div.btn{
+    /* 백그라운드 컬러로 배경색을 만들어서 버튼인 부분의 색을 지정할 것이며
+    도형으로 버튼의 영역이 있기에 w값을 입력하였습니다 */
+    width: calc(100% / 6 * 2.5);
+    /* 부모요소인 texts가 6칸이라 생각하여 100%를 6개로 나누었고 
+    2개하고 반의 영역을 곱했습니다 */
+    line-height: 40px;
+    height: 40px;
+    overflow: hidden;
+    /* 텍스트의 h값만큼만 텍스트를 보여주기위해 ovh 속성을 이용하여 넘치는 부분을 없애주었습니다. */
+    background-color: rgb(255, 86, 86);
+    /* 버튼은 도형과 텍스트가 있어 lh값으로 텍스트에 높이를 주고 h값으로 도형에도 높이를 줘서
+    두개를 같이 사용해야하여 값을 넣었습니다 */
+    /* 버튼이 텍스트로부터 20px 떨어져있어서 값을 넣었습니다.
+    여기서 margin: 0 auto 아래로 값을 입력해야 마진탑이 우선순위를 가진다. */
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    /* ttc를 사용하여 텍스트 가운데 정렬을 하면서 margin: 0 auto로 도형도 같이 정렬해주고
+     border-radius를 사용하여 둥근 모서리로 만들어주었습니다.
+     마지막으로 포인트 커서를 넣기 위해 값을 넣었습니다.*/
+}
+
+
+
+/* cnt03 */
+div.cntWrap:nth-child(5){
+    /* 바디의 5번째 자식인 컨텐츠 3에게 마진탑 값을 주었습니다. */
+    margin-top: 320px;
+}
+div.cntWrap>div.content.cnt03{}
+div.cntWrap>div.content.cnt03>div.header{}
+div.cntWrap>div.content.cnt03>div.header>h2{}
+div.cntWrap>div.content.cnt03>div.header>p{
+    /* p태그는 부모요소 보다 작아야 함으로 W값을 주어 값을 넣었습니다. */
+    width: calc(100% / 12 * 4.5);
+    /* 부모요소인 해더의 영역 100%를 12개로 나누어 
+    4칸 반의 영역을 차지했다고 생각하여 값을 넣었습니다 */
+}
+div.cntWrap>div.content.cnt03>div.section{}
+div.cntWrap>div.content.cnt03>div.section>div.article{
+    /* 부모요소인 색션의 영역에서 아티클이 4개가 들어가기에 
+    전체 100%를 4로 나눈 영역에서 띄워진 궈터값 20px를 빼서 값을 넣었습니다.*/
+    width: calc(100% / 4 - 20px);
+    /* 텍스가 숨겨져서 이미지위로 보이는 액션을 넣기 위해
+    이미지값만큼 아티클 높이를 주어서 텍스를 숨기기 위해 값을 넣었습니다. */
+    height: 240px;
+    /* 아티클 4개를 가로정렬하였고 부모요소에게 가상요소를 만들었습니다. */
+    float: left;
+    overflow: hidden;
+    /* ovh를 사용하여 텍스트영역이 보이지 않도록 설정하였습니다. */
+}
+div.cntWrap>div.content.cnt03>div.section::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article>div.image{
+    /* 마퀴툴로 잰 이미지 값입니다 */
+    height: 240px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article>div.texts{
+    /* 텍스트가 위 40px 아래 60px 좌우 20px 떨어져있어 값을 넣었습니다*/
+    padding: 40px 20px 60px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article>div.texts>h3{}
+div.cntWrap>div.content.cnt03>div.section>div.article>div.texts>p{}
+
+
+
+/* ftr */
+div.ftrWrap{
+    /* 컨텐츠3으로부터 푸터가 160px 떨어져서 값을 넣었습니다. */
+    margin-top: 160px;
+    background-color: rgb(255, 87, 87);
+}
+div.ftrWrap>div.footer{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    /* 가운데 정렬을 할 것이기에 좌우값 빼고 위아래 80px를 넣었습니다.*/
+    padding: 80px 0px;
+}
+div.ftrWrap>div.footer>h1{
+    /* 위에서 두칸 영역을 차지하여 값을 넣었습니다. */
+    line-height: 80px;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    /* h1을 가운데 정렬을 하기위해 tac값을 넣었고,
+    ttu를 사용하여 대문자로 모두 바꾸었습니다 */
+}
+div.ftrWrap>div.footer>h1>b{}
+div.ftrWrap>div.footer>p{
+    /* p태그는 부모요소보다 작아야 함으로 w값을 주어 부모안에 들어갈수 있도록 하였습니다 */
+    width: calc(100% / 12 * 4.5);
+    /* p태그의 부모요소인 푸터를 12개로 나누어 
+    p태그가 4개 반을 차지한다고 생각하여 값을 넣었습니다. */
+    line-height: 20px;
+    font-size: 12px;
+    height: 40px;
+    /* 텍스트는 lh값 h값을 두개 넣어야 해서 값을 넣었습니다. */
+    margin: 0 auto;
+    overflow: hidden;
+    /* 텍스트박스는 마진값을 사용하여 가운데 정렬을 해야하고
+    ovh값으로 넘어간 텍스트를 설정한 h값 만큼만 보이도록 값을 넣었습니다.  */
+}
+div.ftrWrap>div.footer>div.sns{
+    /* 위에서 두칸의 영역을 차지하여 값을 넣었습니다. */
+    line-height: 80px;
+    font-size: 20px;
+    /* 텍스트 아이콘을 가운데 정력하기 위해 값을 넣었습니다 */
+    text-align: center;
+}
+div.ftrWrap>div.footer>div.sns>i{}

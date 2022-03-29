@@ -1,0 +1,114 @@
+/* 메뉴탑 선택자 */
+div.mntopWrap{}
+div.mntopWrap>div.mnt{}
+div.mntopWrap>div.mnt>div.logos{}
+div.mntopWrap>div.mnt>div.logos>i{}
+div.mntopWrap>div.mnt>ul.nav{}
+div.mntopWrap>div.mnt>ul.nav>li{}
+
+/* 해더 선택자 */
+div.hdrWrap{}
+div.hdrWrap>div.hdr{}
+div.hdrWrap>div.hdr>h1{}
+div.hdrWrap>div.hdr>ul.nav{}
+div.hdrWrap>div.hdr>ul.nav>li{}
+div.hdrWrap>div.hdr>ul.nav>li>i{}
+
+/* 컨텐츠 공통*/
+div.cntWrap{}
+div.cntWrap>div.content{}
+div.cntWrap>div.content>div.header{}
+div.cntWrap>div.content>div.header>h2{}
+div.cntWrap>div.content>div.header>p{}
+div.cntWrap>div.content>div.section{}
+div.cntWrap>div.content>div.section>div.article{}
+div.cntWrap>div.content>div.section>div.article>div.image{}
+div.cntWrap>div.content>div.section>div.article>div.texts{}
+div.cntWrap>div.content>div.section>div.article>div.texts>h3{}
+div.cntWrap>div.content>div.section>div.article>div.texts>h5{}
+div.cntWrap>div.content>div.section>div.article>div.texts>p{}
+div.cntWrap>div.content>div.section>div.article>div.texts>div.sns{}
+div.cntWrap>div.content>div.section>div.article>div.texts>div.sns>i{}
+
+
+/* 컨텐츠1 선택자 */
+div.cntWrap>div.content.cnt01{}
+/* 컨텐츠1 해더 선택자 */
+div.cntWrap>div.content.cnt01>div.header{}
+div.cntWrap>div.content.cnt01>div.header>h2{}
+div.cntWrap>div.content.cnt01>div.header>p{}
+/* 컨텐츠1 색션 선택자 */
+div.cntWrap>div.content.cnt01>div.section{}
+/* 컨텐츠1 색션>아트탑 선택자 */
+div.cntWrap>div.content.cnt01>div.section>div.arttop{}
+/* 컨텐츠1 색션>아트탑>아티클 선택자 */
+div.cntWrap>div.content.cnt01>div.section>div.arttop>div.article{}
+/* 컨텐츠1 색션>아트탑>아티클>이미지 선택자 */
+div.cntWrap>div.content.cnt01>div.section>div.arttop>div.article>div.image{}
+/* 컨텐츠1 색션>아트탑>아티클>텍스트 선택자 */
+div.cntWrap>div.content.cnt01>div.section>div.arttop>div.article>div.texts{}
+div.cntWrap>div.content.cnt01>div.section>div.arttop>div.article>div.texts>h3{}
+div.cntWrap>div.content.cnt01>div.section>div.arttop>div.article>div.texts>h5{}
+div.cntWrap>div.content.cnt01>div.section>div.arttop>div.article>div.texts>p{}
+/* 컨텐츠1 색션>아트탑>아티클>텍스트>sns 선택자 */
+div.cntWrap>div.content.cnt01>div.section>div.arttop>div.article>div.texts>div.sns{}
+div.cntWrap>div.content.cnt01>div.section>div.arttop>div.article>div.texts>div.sns>i{}
+/* 컨텐츠1 색션>아트바텀 선택자 */
+div.cntWrap>div.content.cnt01>div.section>div.artbtm{}
+/* 컨텐츠1 색션>아트바텀>아티클 선택자 */
+div.cntWrap>div.content.cnt01>div.section>div.artbtm>div.article{}
+/* 컨텐츠1 색션>아트바텀>아티클>이미지 선택자 */
+div.cntWrap>div.content.cnt01>div.section>div.artbtm>div.article>div.image{}
+/* 컨텐츠1 색션>아트바텀>아티클>텍스트 선택자 */
+div.cntWrap>div.content.cnt01>div.section>div.artbtm>div.article>div.texts{}
+div.cntWrap>div.content.cnt01>div.section>div.artbtm>div.article>div.texts>h3{}
+div.cntWrap>div.content.cnt01>div.section>div.artbtm>div.article>div.texts>p{}
+/* 컨텐츠1 색션>아트바텀>아티클>텍스트>sns 선택자 */
+div.cntWrap>div.content.cnt01>div.section>div.artbtm>div.article>div.texts>div.sns{}
+div.cntWrap>div.content.cnt01>div.section>div.artbtm>div.article>div.texts>div.sns>i{}
+
+
+/* 컨텐츠2 선택자 */
+div.cntWrap>div.content.cnt02{}
+/* 컨텐츠2 해더 선택자 */
+div.cntWrap>div.content.cnt02>div.header{}
+div.cntWrap>div.content.cnt02>div.header>h2{}
+div.cntWrap>div.content.cnt02>div.header>p{}
+/* 컨텐츠2 색션 선택자 */
+div.cntWrap>div.content.cnt02>div.section{}
+/* 컨텐츠2 아티클 선택자 */
+div.cntWrap>div.content.cnt02>div.section>div.article{}
+/* 컨텐츠2 아티클>이미지 선택자 */
+div.cntWrap>div.content.cnt02>div.section>div.article>div.image{}
+/* 컨텐츠2 아티클>텍스트 선택자 */
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts{}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>h3{}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>h5{}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>p{}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>div.btn{}
+
+/* 컨텐츠3 선택자 */
+div.cntWrap>div.content.cnt03{}
+/* 컨텐츠3 해더 선택자 */
+div.cntWrap>div.content.cnt03>div.header{}
+div.cntWrap>div.content.cnt03>div.header>h2{}
+div.cntWrap>div.content.cnt03>div.header>p{}
+/* 컨텐츠3 색션 선택자 */
+div.cntWrap>div.content.cnt03>div.section{}
+/* 컨텐츠3 아티클 선택자 */
+div.cntWrap>div.content.cnt03>div.section>div.article{}
+/* 컨텐츠3 아티클>이미지 선택자 */
+div.cntWrap>div.content.cnt03>div.section>div.article>div.image{}
+/* 컨텐츠3 아티클>텍스트 선택자 */
+div.cntWrap>div.content.cnt03>div.section>div.article>div.texts{}
+div.cntWrap>div.content.cnt03>div.section>div.article>div.texts>h3{}
+div.cntWrap>div.content.cnt03>div.section>div.article>div.texts>p{}
+
+/* 풋터 선택자 */
+div.frtWrap{}
+div.frtWrap>div.footer{}
+div.frtWrap>div.footer>h1{}
+div.frtWrap>div.footer>p{}
+/* 풋터>sns 선택자 */
+div.frtWrap>div.footer>div.sns{}
+div.frtWrap>div.footer>div.sns>i{}

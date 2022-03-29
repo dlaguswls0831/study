@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day27_ani.html</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.rec{
+            width: 500px;
+            height: 500px;
+            /* 이미지 넣는 공식-이미지링크 넣을때 '' 꼭 넣어주기 */
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(./images/vinyl_PNG63.png);
+            /* 애니메이션 공식 */
+            animation-name: round;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            position: relative;
+        }
+
+        @keyframes round {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(365deg);
+            }
+        }
+
+        div.pic{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('./images/cnt01_pic01.jpg');
+            /* 포지션 가운데 공식 */
+            position: absolute;
+            margin: auto;
+            right: 0px;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+        }
+
+        div.picture{
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: left;
+            background-image: url('./images/cnt01_pic03.jpg');
+            animation-name: move;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes move {
+            0%{
+                background-position: left;
+            }
+            50%{
+                background-position: right;
+            }
+            100%{
+                background-position: left;
+            }
+        }
+
+        div.view{
+            width: 100vw;
+            height: 50px;
+            font-size: 40px;
+            overflow: hidden;
+        }
+        div.view>h1{
+            width: 300vw;
+            margin-left: 0vw;
+            animation-name: h1move;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes h1move {
+            0%{
+                margin-left: 0vw;
+            }
+            50%{
+                margin-left: -150vw;
+            }
+            100%{
+                margin-left: 0vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rec">
+        <div class="pic"></div>
+    </div>
+
+    <div class="picture"></div>
+    
+    <div class="view">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ducimus itaque nulla non aut magni iure laborum iste consequuntur tempora. Debitis, molestiae ea odit cupiditate mollitia dolore alias esse natus!</h1>
+    </div>
+</body>
+</html>
