@@ -43,13 +43,15 @@ div.cntWrap>div.content>div.section>div.article>div.img>div.num{
 }
 div.cntWrap>div.content>div.section>div.article>div.img>div.num>span{}
 div.cntWrap>div.content>div.section>div.article>div.img>ul.images{
-    width: 600%;
+    width: 100%;
+    height: 280px;
+    position: relative;
 }
 div.cntWrap>div.content>div.section>div.article>div.img>ul.images>li.image{
     height: 280px;
-    width: calc(100% / 6);
-    float: left;
-    background-color: #ccc;
+    width: 100%;
+    position: absolute;
+    top: 0; left: 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

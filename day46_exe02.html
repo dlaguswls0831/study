@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide.que</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/xeicon.min.css">
+    <style>
+        div.cntWrap{
+            margin-top: 120px;
+        }
+        div.cntWrap>div.content{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        div.cntWrap>div.content>div.section{
+            position: relative;
+        }
+        div.cntWrap>div.content>div.section>div.imageGroup{
+            width: calc(100% / 12 * 7);
+            position: relative;
+        }
+        div.cntWrap>div.content>div.section>div.imageGroup>ul.images{
+            width: 100%;
+            position: relative;
+        }
+        div.cntWrap>div.content>div.section>div.imageGroup>ul.images>li.image{
+            width: 100%;           
+            height: 480px;
+            position: absolute;
+            top: 0; left: 0;
+            background-color: #ccc;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        div.cntWrap>div.content>div.section>div.imageGroup>ul.images>li.image.i1{
+            background-image: url('./images/cnt01_pic01.jpg');
+        }
+        div.cntWrap>div.content>div.section>div.imageGroup>ul.images>li.image.i2{
+            background-image: url('./images/cnt01_pic02.jpg');
+        }
+        div.cntWrap>div.content>div.section>div.imageGroup>ul.images>li.image.i3{
+            background-image: url('./images/cnt01_pic03.jpg');
+        }
+        div.cntWrap>div.content>div.section>div.imageGroup>ul.images>li.image.i4{
+            background-image: url('./images/cnt02_pic01.jpg');
+        }
+        div.cntWrap>div.content>div.section>div.imageGroup>ul.images>li.image.i5{
+            background-image: url('./images/cnt02_pic02.jpg');
+        }
+        div.cntWrap>div.content>div.section>div.imageGroup>ul.images>li.image.i6{
+            background-image: url('./images/cnt02_pic03.jpg');
+        }
+        div.cntWrap>div.content>div.section>div.textGroup{
+            width: calc(100% / 12 * 8);
+            position: absolute;
+            bottom: -40px; right: 0;
+        }
+        div.cntWrap>div.content>div.section>div.textGroup>ul.texts{
+        }
+        div.cntWrap>div.content>div.section>div.textGroup>ul.texts>li.text{
+            position: absolute;
+            background-color: #000;
+            padding: 40px 0px 60px 90px;
+            color: #fff;
+        }
+        div.cntWrap>div.content>div.section>div.textGroup>ul.texts>li.text>h3{
+            font-size: 36px;
+            line-height: 80px;
+            text-transform: capitalize;
+            font-weight: 700;
+        }
+        div.cntWrap>div.content>div.section>div.textGroup>ul.texts>li.text>p{
+            width: calc(100% / 8 * 5);
+            font-size: 18px;
+            line-height: 20px;
+            color: #ccc;
+            height: 120px;
+            overflow: hidden;
+        }
+        div.cntWrap>div.content>div.section>div.textGroup>ul.texts>li>div.btn{
+            width: calc(100% / 8 * 1.8);
+            margin-top: 40px;
+            font-size: 18px;
+            line-height: 40px;
+            text-transform: uppercase;
+            color: #666;
+            background-color: #fff;
+            text-align: center;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        div.cntWrap>div.content>div.btns{
+            position: absolute;
+            right: 430px;top: 550px;
+            font-size: 25px;
+        }
+        div.cntWrap>div.content>div.btns::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.cntWrap>div.content>div.btns>div.left{
+            float: left;
+            cursor: pointer;
+        }
+        div.cntWrap>div.content>div.btns>div.right{
+            float: left;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        div.cntWrap>div.content>div.score{
+            position: absolute;
+            right: 520px;top: 555px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var i = 0;
+            var img = $('.imageGroup>.images');
+            var txt = $('.textGroup>.texts');
+            var len = img.children().length;
+
+            $('.btns>.left').click(function(){
+                i--;
+                i = (len + i) % len;
+                img.find('li:last').fadeOut(500,function(){
+                    $(this).prependTo('.images');
+                    $(this).fadeIn(0);
+                    $('.score').find('span').first().text(i+1);
+                });
+                txt.find('li:last').fadeOut(500,function(){
+                    $(this).prependTo('.texts');
+                    $(this).fadeIn(0);
+                });
+                
+            });
+            $('.btns>.right').click(function(){
+                i++;
+                i = i%len;
+                img.find('li:first').fadeOut(0,function(){
+                    $(this).appendTo('.images');
+                    $(this).fadeIn(500);
+                    $('.score').find('span').first().text(i+1);
+                });
+                txt.find('li:first').fadeOut(0,function(){
+                    $(this).appendTo('.texts');
+                    $(this).fadeIn(500);
+                });
+            });
+            $('.score').find('span').last().text(len);
+        });
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="content">
+            <div class="header"></div>
+            <div class="section">
+                <div class="imageGroup">
+                    <ul class="images">
+                        <li class="image i2"></li>
+                        <li class="image i3"></li>
+                        <li class="image i4"></li>
+                        <li class="image i5"></li>
+                        <li class="image i6"></li>
+                        <li class="image i1"></li>
+                    </ul>
+                </div>
+                <div class="textGroup">
+                    <ul class="texts">
+                        <li class="text">
+                            <h3>content title2</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quia facilis doloribus a. Quae saepe fugiat magnam repellat consequuntur dignissimos architecto! Voluptatibus harum labore modi amet doloremque aut non ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, vero amet debitis similique ducimus quam voluptatem quod dolor nam quasi in suscipit assumenda nihil quo numquam possimus repudiandae. Corrupti, esse Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quia facilis doloribus a. Quae saepe fugiat magnam repellat consequuntur dignissimos architecto! Voluptatibus harum labore modi amet doloremque aut non ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, vero amet debitis similique ducimus quam voluptatem quod dolor nam quasi in suscipit assumenda nihil quo numquam possimus repudiandae. Corrupti, esse!</p>
+                            <div class="btn">button2</div>
+                        </li>
+                        <li class="text">
+                            <h3>content title3</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quia facilis doloribus a. Quae saepe fugiat magnam repellat consequuntur dignissimos architecto! Voluptatibus harum labore modi amet doloremque aut non ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, vero amet debitis similique ducimus quam voluptatem quod dolor nam quasi in suscipit assumenda nihil quo numquam possimus repudiandae. Corrupti, esse Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quia facilis doloribus a. Quae saepe fugiat magnam repellat consequuntur dignissimos architecto! Voluptatibus harum labore modi amet doloremque aut non ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, vero amet debitis similique ducimus quam voluptatem quod dolor nam quasi in suscipit assumenda nihil quo numquam possimus repudiandae. Corrupti, esse!</p>
+                            <div class="btn">button3</div>
+                        </li>
+                        <li class="text">
+                            <h3>content title4</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quia facilis doloribus a. Quae saepe fugiat magnam repellat consequuntur dignissimos architecto! Voluptatibus harum labore modi amet doloremque aut non ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, vero amet debitis similique ducimus quam voluptatem quod dolor nam quasi in suscipit assumenda nihil quo numquam possimus repudiandae. Corrupti, esse Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quia facilis doloribus a. Quae saepe fugiat magnam repellat consequuntur dignissimos architecto! Voluptatibus harum labore modi amet doloremque aut non ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, vero amet debitis similique ducimus quam voluptatem quod dolor nam quasi in suscipit assumenda nihil quo numquam possimus repudiandae. Corrupti, esse!</p>
+                            <div class="btn">button4</div>
+                        </li>
+                        <li class="text">
+                            <h3>content title5</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quia facilis doloribus a. Quae saepe fugiat magnam repellat consequuntur dignissimos architecto! Voluptatibus harum labore modi amet doloremque aut non ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, vero amet debitis similique ducimus quam voluptatem quod dolor nam quasi in suscipit assumenda nihil quo numquam possimus repudiandae. Corrupti, esse Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quia facilis doloribus a. Quae saepe fugiat magnam repellat consequuntur dignissimos architecto! Voluptatibus harum labore modi amet doloremque aut non ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, vero amet debitis similique ducimus quam voluptatem quod dolor nam quasi in suscipit assumenda nihil quo numquam possimus repudiandae. Corrupti, esse!</p>
+                            <div class="btn">button5</div>
+                        </li>
+                        <li class="text">
+                            <h3>content title6</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quia facilis doloribus a. Quae saepe fugiat magnam repellat consequuntur dignissimos architecto! Voluptatibus harum labore modi amet doloremque aut non ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, vero amet debitis similique ducimus quam voluptatem quod dolor nam quasi in suscipit assumenda nihil quo numquam possimus repudiandae. Corrupti, esseLorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quia facilis doloribus a. Quae saepe fugiat magnam repellat consequuntur dignissimos architecto! Voluptatibus harum labore modi amet doloremque aut non ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, vero amet debitis similique ducimus quam voluptatem quod dolor nam quasi in suscipit assumenda nihil quo numquam possimus repudiandae. Corrupti, esse!</p>
+                            <div class="btn">button6</div>
+                        </li>
+                        <li class="text">
+                            <h3>content title1</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quia facilis doloribus a. Quae saepe fugiat magnam repellat consequuntur dignissimos architecto! Voluptatibus harum labore modi amet doloremque aut non ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, vero amet debitis similique ducimus quam voluptatem quod dolor nam quasi in suscipit assumenda nihil quo numquam possimus repudiandae. Corrupti, esse Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quia facilis doloribus a. Quae saepe fugiat magnam repellat consequuntur dignissimos architecto! Voluptatibus harum labore modi amet doloremque aut non ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, vero amet debitis similique ducimus quam voluptatem quod dolor nam quasi in suscipit assumenda nihil quo numquam possimus repudiandae. Corrupti, esse!</p>
+                            <div class="btn">button1</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="score">
+                <span>1</span>/<span>0</span>
+            </div>
+            <div class="btns">
+                <div class="left">
+                    <i class="xi-angle-left-min"></i>
+                </div>
+                <div class="right">
+                    <i class="xi-angle-right-min"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

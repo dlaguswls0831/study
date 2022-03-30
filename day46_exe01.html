@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무한루프 슬라이드</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .artGroup{
+            width: 1000px;
+            height: 280px;
+        }
+        .artGroup>div.article{
+            width: 200px;
+            height: 280px;
+            float: left;
+            font-size: 80px;
+        }
+        .artGroup>div.article.a1{
+            background-color: aqua;
+        }
+        .artGroup>div.article.a2{
+            background-color: brown;
+        }
+        .artGroup>div.article.a3{
+            background-color: blue;
+        }
+        .artGroup>div.article.a4{
+            background-color: blueviolet;
+        }
+        .artGroup>div.article.a5{
+            background-color: yellowgreen;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // 인터넷 기록 쿠키 삭제, 컨트롤+f5
+        $(function(){
+            $('button:first').click(function(){
+                // $('.article').first().fadeIn(500);
+                
+                // 움직일 요소를 먼저 생각해서 돔탐색으로 잡아주고
+                // 어디 안에서 옮길지를 그 다음으로 돔탐색해서 잡아준다
+                $('.article').first().appendTo($('.artGroup'));
+            });        
+            $('button:last').click(function(){
+                // $('.article').first().fadeOut(500);
+                // // $('.article').eq(2).fadeOut(1000);
+                $('.article').last().prependTo($('.artGroup'));
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="artGroup">
+        <div class="article a1">1</div>    
+        <div class="article a2">2</div>    
+        <div class="article a3">3</div>    
+        <div class="article a4">4</div>    
+        <div class="article a5">5</div>    
+    </div>
+    <button>append</button>
+    <button>prepend</button>
+</body>
+</html>
