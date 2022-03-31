@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위,아래 무한 슬라이드</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            height: 500px;
+            overflow: hidden;
+        }
+        div.artView>div.artGroup{
+            width: 100%;
+            height: 3000px;
+        }
+        div.artView>div.artGroup>div.article{ 
+            width: 100%;
+            height: 500px;
+        }
+        div.artView>div.artGroup>div.article.i1{
+            background-color: red;
+        }
+        div.artView>div.artGroup>div.article.i2{
+            background-color: orange;
+        }
+        div.artView>div.artGroup>div.article.i3{
+            background-color: yellow;
+        }
+        div.artView>div.artGroup>div.article.i4{
+            background-color: green;
+        }
+        div.artView>div.artGroup>div.article.i5{
+            background-color: blue;
+        }
+        div.artView>div.artGroup>div.article.i6{
+            background-color: darkorchid;
+        }
+        div.artView>div.btns{
+            position: absolute;
+            top: 50px;
+        }
+        div.artView>div.btns>button{
+            cursor: pointer;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            // 변수선언
+            var btn = $('.btns');
+            var artG = $('.artGroup');
+
+            // 초기세팅
+            artG.find('.article:last').prependTo(artG);
+            artG.css('margin-top','-500px');
+
+            // left btn
+            btn.find('button').first().click(function(){
+                artG.stop().animate({
+                    marginTop : 0
+                },500,function(){
+                    artG.find('.article:last').prependTo(artG);
+                    artG.css('margin-top','-500px');
+                });
+            });
+            // right btn
+            btn.find('button').last().click(function(){
+                artG.stop().animate({
+                    marginTop : '-1000px'
+                },500,function(){
+                    artG.find('.article:first').appendTo(artG);
+                    artG.css('margin-top','-500px');
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="artGroup">
+            <div class="article i1">1</div>
+            <div class="article i2">2</div>
+            <div class="article i3">3</div>
+            <div class="article i4">4</div>
+            <div class="article i5">5</div>
+            <div class="article i6">6</div>
+        </div>
+        <div class="btns">
+            <button>up</button>
+            <button>down</button>
+        </div>
+    </div>
+</body>
+</html>

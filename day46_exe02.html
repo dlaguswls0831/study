@@ -127,11 +127,15 @@
             var img = $('.imageGroup>.images');
             var txt = $('.textGroup>.texts');
             var len = img.children().length;
-
+            
             $('.btns>.left').click(function(){
-                i--;
-                i = (len + i) % len;
-                img.find('li:last').fadeOut(500,function(){
+                // 첫번째 이미지에 인덱스 수를 적용해서 0부터 시작일때
+                // 전체 페이지 수에 인덱스 수를 빼서 싱크를 맞춰주었다
+                // var ind =$('.images>li.image.i2').index()
+                // $('.score').find('span').first().text(len-ind);
+                img.find('li:last').stop().fadeOut(500,function(){
+                    i--;
+                    i = (len+i)%len;
                     $(this).prependTo('.images');
                     $(this).fadeIn(0);
                     $('.score').find('span').first().text(i+1);
