@@ -55,6 +55,29 @@
         div.artView>div.btns>button{
             cursor: pointer;
         }
+        div.artView>ul.paging{
+            width: 25%;
+            left: 0;right: 0;bottom: 40px; 
+            margin: auto;
+            position: absolute;
+        }
+        div.artView>ul.paging::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.artView>ul.paging>li{
+            width: 20px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 10px;
+            float: left;
+            margin: 0px 5px;
+            transition: all 0.6s;
+        }
+        div.artView>ul.paging>li.on{
+            width: 40px;
+        }
     </style>
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script>
@@ -94,9 +117,22 @@
         $(function(){
             var btn = $('.btns');
             var artG = $('.artGroup');
-            //기초세팅 
+            var i=0;
+
+             
             artG.find('.article:last').prependTo(artG);
             artG.css('margin-left','-100%');
+
+            // 페이징
+            // pag.find('li').click(function(){
+            //     var ind = $(this).index();
+            //     $('.paging>li').removeClass('on');
+            //     $(this).addClass('on');
+            //     artG.find('.article').css('width',0);
+            //     artG.find('.article').eq(ind).css('width','calc(100% / 6)');
+            //     i=ind;
+            // });
+
             // left btn
             btn.find('button').first().click(function(){
                 artG.stop().animate({
@@ -140,6 +176,14 @@
             <div class="article i2">2</div>
             <div class="article i3">3</div>
         </div>
+        <ul class="paging">
+            <li class="on"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
         <div class="btns">
             <button><</button>
             <button>></button>
