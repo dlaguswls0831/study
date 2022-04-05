@@ -1,0 +1,25 @@
+div.artView{
+    width: 90%;
+    max-width: 700px;
+}
+div.artView>ul.artGroup{
+    width: 300%;
+}
+div.artView>ul.artGroup>li{
+    width: calc(100% / 6 - 20px);
+    margin: 0px 10px;
+    height: 300px;
+}
+div.pabtn{
+    width: 90%;
+    max-width: 700px;
+}
+div.pabtn>ul.paging{
+    width: 30%;
+}
+div.pabtn>ul.paging>li:nth-last-child(1){
+    display: none;
+}
+div.btn{
+    top: -225px;
+}

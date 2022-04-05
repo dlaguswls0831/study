@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제 슬라이드</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/day49_pc_exe01.css">
+    <link rel="stylesheet" href="./css/day49_tab_exe01.css" media="(max-width:1024px) and (min-width:0px)">
+    <link rel="stylesheet" href="./css/day49_mob_exe01.css" media="(max-width:420px) and (min-width:0px)">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            // alert($(window).width());
+
+            var artG = $('.artGroup');
+            var btn = $('.btn');
+            var pag = $('.paging>li');
+            var wd = $(window).width();
+            var i = 0;
+            var mv = 0;
+
+            if(wd > 1024){
+                mv = 100;
+            }else if(wd > 420 && wd <= 1024){
+                mv = 50;
+            }else{
+                mv = 100;
+            }
+
+            function paging(){
+                var ind = $(this).index();
+                pag.removeClass('on');
+                $(this).addClass('on');
+                artG.css('margin-left',ind*-mv+'%');
+                i=ind;
+            };
+            function left(){
+                i++;
+                i=i%6;
+                if(wd > 420 && wd <= 1024){
+                    if(i>=4){
+                        i=4;
+                    }
+                }else{
+                    if(i>=5){
+                        i=5;
+                    } 
+                }
+                artG.css('margin-left',i*-mv+'%');
+                pag.removeClass('on');
+                pag.eq(i).addClass('on');
+            };
+            function right(){
+                i--;
+                i=(5+i)%5;
+                if(i<=0){
+                    i=0;
+                }
+                artG.css('margin-left',i*-mv+'%');
+                pag.removeClass('on');
+                pag.eq(i).addClass('on');
+            };
+            // setTimeout(left,500);
+            var auto = setInterval(left,1000);
+
+            pag.click(paging);
+            btn.find('button').first().click(function(){
+                right();
+                clearInterval(auto);
+            });
+            btn.find('button').last().click(function(){
+                left();
+                clearInterval(auto);
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <ul class="artGroup">
+            <li class="image1"></li>
+            <li class="image2"></li>
+            <li class="image3"></li>
+            <li class="image4"></li>
+            <li class="image5"></li>
+            <li class="image6"></li>
+        </ul>
+    </div>
+    <div class="pabtn">
+        <ul class="paging">
+            <li class="on"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="btn">
+        <button><</button>
+        <button>></button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+div.artView>ul.artGroup{
+    width: 600%;
+}
+div.pabtn{
+    width: 100%;
+}
+div.pabtn>ul.paging{
+    width: 50%;
+}
+div.pabtn>ul.paging>li:nth-last-child(1){
+    display: block;
+}
