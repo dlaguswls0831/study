@@ -1,0 +1,355 @@
+body{
+    position: relative;
+}
+/* hdr */
+div.hdrWrap{
+    width: 100%;
+    background-color: #2c2c2c;
+    z-index: 2;
+    transition: all 0.5s;
+}
+div.hdrWrap.fix{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fc0;
+}
+div.hdrWrap>div.header{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 30px;
+    line-height: 80px;
+    font-weight: 700;
+}
+div.hdrWrap>div.header::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.hdrWrap>div.header>div.logo{
+    float: left;
+    cursor: pointer;
+}
+div.hdrWrap>div.header>ul.nav{
+    float: right;
+}
+div.hdrWrap>div.header>ul.nav>li{
+    float: left;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+/* main */
+div.mainWrap{
+    background-color: #535353;
+    height: 640px;
+}
+div.mainWrap>div.main{}
+div.mainWrap>div.main>div.image{}
+
+/* cnt 공통 */
+div.cntWrap{
+    margin-top: 80px;
+}
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content>div.header{}
+div.cntWrap>div.content>div.header>h2{
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+/* cnt01 */
+div.cntWrap>div.content.cnt01{
+    position: relative;
+    z-index: 1;
+}
+div.cntWrap>div.content.cnt01>div.header{}
+div.cntWrap>div.content.cnt01>div.header>h2{
+    text-align: center;
+}
+div.cntWrap>div.content.cnt01>div.header>p{
+    width: calc(100% / 12 * 5);
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+div.cntWrap>div.content.cnt01>div.section{
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup{}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article{
+    width: calc(100% / 6 - 20px);
+    margin: 0px 10px;
+    float: left;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image{
+    background-color: #585858;
+    height: 200px;
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article:nth-child(3)>div.image{
+    margin-top: 0;
+    height: 240px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article:nth-child(4)>div.image{
+    margin-top: 0;
+    height: 240px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i1{}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i2{}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i3{}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i4{}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i5{}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i6{}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.texts{}
+div.cntWrap>div.content.cnt01>div.btns{
+    font-size: 25px;
+    position: absolute;
+    top: 140px; right: 0;
+    margin: 0px 10px;
+}
+div.cntWrap>div.content.cnt01>div.btns::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt01>div.btns>div.left{
+    float: left;
+    cursor: pointer;
+    margin-right: 10px;
+}
+div.cntWrap>div.content.cnt01>div.btns>div.left>i{}
+div.cntWrap>div.content.cnt01>div.btns>div.right{
+    float: left;
+    cursor: pointer;
+}
+div.cntWrap>div.content.cnt01>div.btns>div.right>i{}
+
+/* cnt02 */
+div.cntWrap:nth-child(4){
+    background-color: #000;
+    color: #fff;
+    padding-bottom: 80px;
+}
+div.cntWrap>div.content.cnt02{}
+div.cntWrap>div.content.cnt02>div.header{}
+div.cntWrap>div.content.cnt02>div.header>h2{
+    line-height: 80px;
+}
+div.cntWrap>div.content.cnt02>div.section{
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt02>div.section::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article{
+    width: calc(100% / 4 - 20px);
+    margin: 0px 10px;
+    float: left;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.image{
+    height: 320px;
+    background-color: #fff;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.image.i1{}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.image.i2{}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.image.i3{}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.image.i4{}
+div.cntWrap>div.content.cnt02>div.section>div.article:hover>div.texts{
+    opacity: 1;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts{
+    background-color: #8d8d8d;
+    height: 80px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>div.btn{
+    text-align: center;
+    line-height: 80px;
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* cnt03 */
+div.cntWrap>div.content.cnt03{}
+div.cntWrap>div.content.cnt03>div.header{}
+div.cntWrap>div.content.cnt03>div.header>h2{
+    line-height: 80px;
+}
+div.cntWrap>div.content.cnt03>div.header>p{
+    width: calc(100% / 12 * 8);
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+    height: 40px;
+    overflow-y: hidden;
+}
+div.cntWrap>div.content.cnt03>div.section{
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt03>div.section::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artLeft{
+    width: calc(100% / 12 * 3 - 20px);
+    margin: 0px 10px;
+    float: left;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artLeft>div.article{
+    height: 400px;
+    overflow: hidden;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artLeft>div.article>div.image{
+    height: 400px;
+    background-color: #aaa;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artLeft>div.article>div.texts{
+    margin-top: -400px;
+    background: rgba( 0, 0, 0, 0.3);
+    padding: 40px 30px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artLeft>div.article:hover>div.texts{
+    opacity: 1;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artLeft>div.article>div.texts>h3{
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 80px;
+    text-transform: capitalize;
+    text-align: center;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artLeft>div.article>div.texts>p{
+    width: 90%;
+    font-size: 12px;
+    line-height: 20px;
+    height: 240px;
+    text-align: center;
+    overflow: hidden;
+    margin: 0 auto;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight{
+    width: calc(100% / 12 * 9 - 20px);
+    margin: 0px 10px;
+    float: left;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artTop{}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artTop>div.article{}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artTop::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artTop>div.article:nth-child(1){
+    width: calc(100% / 9 * 3 - 20px);
+    margin: 0px 10px;
+    float: left;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artTop>div.article:nth-child(2){
+    width: calc(100% / 9 * 6 - 20px);
+    margin: 0px 10px;
+    float: right;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artTop>div.article>div.image{
+    height: 220px;
+    background-color: #aaa;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artTop>div.article>div.image.i1{}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artTop>div.article>div.image.i2{}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artTop>div.article>div.texts{}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artBtm{
+    margin: 0px 10px;
+    margin-top: 20px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artBtm>div.article{}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artBtm>div.article>div.image{
+    height: 160px;
+    background-color: #aaa;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artBtm>div.article>div.texts{}
+
+/* ftr */
+div.ftrWrap{
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0px;
+    margin-top: 80px;
+}
+div.ftrWrap>div.footer{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.ftrWrap>div.footer::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.ftrWrap>div.footer>div.logo{
+    width: calc(100% / 12 * 1);
+    float: left;
+    margin-right: 80px;
+    margin-top: 40px;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 700;
+}
+div.ftrWrap>div.footer>div.info{
+    width: calc(100% / 12 * 8);
+    float: left;
+}
+div.ftrWrap>div.footer>div.info>ul.inTop{}
+div.ftrWrap>div.footer>div.info>ul.inTop::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.ftrWrap>div.footer>div.info>ul.inTop>li{
+    float: left;
+    margin-left: 14px;
+}
+div.ftrWrap>div.footer>div.info>ul.inTop>li:nth-child(1){
+    margin-left: 0;
+}
+div.ftrWrap>div.footer>div.info>ul.inBtm{
+    margin-top: 30px;
+}
+div.ftrWrap>div.footer>div.info>ul.inBtm>li{}
+div.ftrWrap>div.footer>div.info>ul.inBtm>li>p{
+    font-size: 12px;
+    line-height: 20px;
+    height: 80px;
+    overflow: hidden;
+}
+div.ftrWrap>div.footer>div.sns{
+    width: calc(100% / 12 * 1.5);
+    float: left;
+    margin-left: 50px;
+    margin-top: 80px;
+}
+div.ftrWrap>div.footer>div.sns>i{
+    font-size: 25px;
+}

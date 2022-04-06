@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            margin-top: 80px;
+        }
+        div.aco>ul.accod>li:nth-child(odd).on+li{
+            height: 80px;
+        }
+        div.aco>ul.accod>li:nth-child(odd)+li{
+            /* height: 0px; */
+            /* transition: height 0.5s; */
+        }
+        div.aco>ul.accod>li:nth-child(odd){
+            line-height: 40px;
+            text-align: center;
+            background-color: #fc0;
+        }
+        div.aco>ul.accod>li:nth-child(even){
+            line-height: 20px;
+            height: 80px;
+            overflow: hidden;
+            background-color: #ccc;
+            text-align: center;
+        }
+        div.aco>ul.accod>li>p{
+            width: 50%;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            // $('.accod>li').even().click(function(){
+            //     $(this).toggleClass('on');
+            // });
+            $('.accod>li').even().click(function(){
+                $(this).next().slideToggle(500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="aco">
+        <ul class="accod">
+            <li><h3>segment title</h3></li>
+            <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio facilis, nisi excepturi dignissimos sed eum blanditiis nam ducimus illo adipisci cumque, voluptatibus amet delectus quasi repellendus obcaecati. Necessitatibus, saepe laudantium.</p></li>
+            <li><h3>segment title</h3></li>
+            <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio facilis, nisi excepturi dignissimos sed eum blanditiis nam ducimus illo adipisci cumque, voluptatibus amet delectus quasi repellendus obcaecati. Necessitatibus, saepe laudantium.</p></li>
+            <li><h3>segment title</h3></li>
+            <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio facilis, nisi excepturi dignissimos sed eum blanditiis nam ducimus illo adipisci cumque, voluptatibus amet delectus quasi repellendus obcaecati. Necessitatibus, saepe laudantium.</p></li>
+            <li><h3>segment title</h3></li>
+            <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio facilis, nisi excepturi dignissimos sed eum blanditiis nam ducimus illo adipisci cumque, voluptatibus amet delectus quasi repellendus obcaecati. Necessitatibus, saepe laudantium.</p></li>
+            <li><h3>segment title</h3></li>
+            <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio facilis, nisi excepturi dignissimos sed eum blanditiis nam ducimus illo adipisci cumque, voluptatibus amet delectus quasi repellendus obcaecati. Necessitatibus, saepe laudantium.</p></li>
+        </ul>
+    </div>
+</body>
+</html>
