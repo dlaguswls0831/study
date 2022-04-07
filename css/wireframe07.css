@@ -86,15 +86,18 @@ div.cntWrap>div.content.cnt01>div.header>p{
 }
 div.cntWrap>div.content.cnt01>div.section{
     margin-top: 40px;
+    overflow: hidden;
 }
-div.cntWrap>div.content.cnt01>div.section>div.artGroup{}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup{
+    width: 166.666%;
+}
 div.cntWrap>div.content.cnt01>div.section>div.artGroup::after{
     content: '';
     display: block;
     clear: both;
 }
 div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article{
-    width: calc(100% / 6 - 20px);
+    width: calc(100% / 10 - 20px);
     margin: 0px 10px;
     float: left;
 }
@@ -102,21 +105,46 @@ div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image{
     background-color: #585858;
     height: 200px;
     margin-top: 40px;
-}
-div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article:nth-child(3)>div.image{
-    margin-top: 0;
-    height: 240px;
+    transition: all 0.5s;
 }
 div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article:nth-child(4)>div.image{
     margin-top: 0;
     height: 240px;
 }
-div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i1{}
-div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i2{}
-div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i3{}
-div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i4{}
-div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i5{}
-div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i6{}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article:nth-child(5)>div.image{
+    margin-top: 0;
+    height: 240px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i1{
+    background-color: red;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i2{
+    background-color: orange;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i3{
+    background-color: yellow;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i4{
+    background-color: green;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i5{
+    background-color: blue;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i6{
+    background-color: darkblue;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i7{
+    background-color: violet;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i8{
+    background-color: darkviolet;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i9{
+    background-color: #000;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image.i10{
+    background-color: pink;
+}
 div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.texts{}
 div.cntWrap>div.content.cnt01>div.btns{
     font-size: 25px;

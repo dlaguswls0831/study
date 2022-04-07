@@ -11,6 +11,10 @@
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script>
         $(function(){
+            var i=0;
+            // 새로고침을 했을때, 모션이 자연스럽지 않아서 기본세팅을 해주지않고 HTML에서 세팅해주었다
+            // $('.artGroup').find('.article:last').prependTo('.artGroup');
+            $('.artGroup').css('margin-left','-16.666%');
             // 스크롤함수를 사용할때는 alert를 사용하면 멈춰서 콘솔로그로 확인한다
             $(window).scroll(function(){
                 var now = $(this).scrollTop();
@@ -21,6 +25,24 @@
                     $('.hdrWrap').removeClass('fix');
                     // console.log('inherit');
                 }
+            });
+
+            $('.btns>.left').find('i').click(function(){
+                $('.artGroup').stop().animate({
+                    marginLeft : 0
+                },500,function(){
+                    $('.artGroup').find('.article:last').prependTo('.artGroup');
+                    $('.artGroup').css('margin-left','-16.666%');
+                });
+                
+            });
+            $('.btns>.right').find('i').click(function(){
+                $('.artGroup').stop().animate({
+                    marginLeft : '-33.33%'
+                },500,function(){
+                    $('.artGroup').find('.article:first').appendTo('.artGroup');
+                    $('.artGroup').css('margin-left','-16.666%');
+                });
             });
         });
     </script>
@@ -53,6 +75,10 @@
             <div class="section">
                 <div class="artGroup">
                     <div class="article">
+                        <div class="image i10"></div>
+                        <div class="texts"></div>
+                    </div>
+                    <div class="article">
                         <div class="image i1"></div>
                         <div class="texts"></div>
                     </div>
@@ -74,6 +100,18 @@
                     </div>
                     <div class="article">
                         <div class="image i6"></div>
+                        <div class="texts"></div>
+                    </div>
+                    <div class="article">
+                        <div class="image i7"></div>
+                        <div class="texts"></div>
+                    </div>
+                    <div class="article">
+                        <div class="image i8"></div>
+                        <div class="texts"></div>
+                    </div>
+                    <div class="article">
+                        <div class="image i9"></div>
                         <div class="texts"></div>
                     </div>
                 </div>
