@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제 오버그리드</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/xeicon.min.css">
+    <style>
+        .cntWrap{
+            margin-top: 160px;
+            padding-bottom: 160px;
+        }
+        .content{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        header{
+            width: calc(100% / 12 * 5);
+            padding-left: 20px;
+        }
+        header h2{
+            line-height: 80px;
+            text-transform: capitalize;
+            font-weight: 700;
+            font-size: 36px;
+        }
+        header p{
+            line-height: 20px;
+            height: 40px;
+            font-size: 14px;
+            overflow: hidden;
+        }
+        section{
+            margin-top: 80px;
+            display: flex;
+            justify-content: space-between;
+        }
+        article:nth-child(1){
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+        }
+        article{
+            width: calc(100% / 12 * 5 - 20px);
+        }
+        article:nth-child(2){
+            width: calc(100% / 12 * 7 - 20px);
+        }
+        article:nth-child(2)>.texts{
+            margin-top: 40px;
+        }
+        .ovrGired{
+            /* 마진값을 더해주었을 때 100vw가 1080px보다 작아서 음수의 값이 나오면
+            +100%의 값이 작아져서 더해짐으로 min을 설정한다 */
+            width: calc((100vw - 1080px) / 2 + 100%);
+            min-width: calc((100vw - 80vw) / 2 + 100%);
+            height: 440px;
+            background-color: #555;
+        }
+        .image{
+            width: 100%;
+        }
+        .image.i1{
+            direction: rtl;
+            margin-top: 40px;
+        }
+        article h3{
+            font-size: 24px;
+            line-height: 40px;
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+        article p{
+            font-size: 14px;
+            line-height: 20px;
+            height: 80px;
+            overflow: hidden;
+        }
+        .texts{
+            padding-left: 20px;
+        }
+        </style>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="content cnt01">
+            <header>
+                <h2>content title</h2>
+                <p>Praesent a bibendum dolor, in auctor ligula. Fusce pulvinar tempus orci quis placerat. Vivamus ornare augue quis est </p>
+            </header>
+            <section>
+                <article>
+                    <div class="image i1">
+                        <div class="ovrGired"></div>
+                    </div>
+                    <div class="texts">
+                        <h3>segment title</h3>
+                        <p>Duis vel pulvinar diam, quis efficitur elit. Sed eget porta metus. Aenean ultrices sem ut gravida interdum. Sed vel mi sollicitudin, viverra odio eget, aliquet sapien. Nulla dapibus dui sit amet tellus consequat, eu fringilla lorem fermentum. Fusce vel vestibulum est, in interdum tortor. Praesent a bibendum dolor, in auctor ligula. Fusce pulvinar tempus orci quis placerat. Vivamus ornare augue quis est venenatis, eu consequat dui feugiat. Nulla ac augue nec enim sagittis mollis nec sed orci. Integer lobortis turpis vel metus sodales, eu venenatis neque lobortis. Maecenas non arcu consectetur, blandit odio sed, sollicitudin lorem. Aenean et lectus hendrerit, pharetra mi dictum, finibus mauris.</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="image i2">
+                        <div class="ovrGired"></div>
+                    </div>
+                    <div class="texts">
+                        <h3>segment title</h3>
+                        <p>Duis vel pulvinar diam, quis efficitur elit. Sed eget porta metus. Aenean ultrices sem ut gravida interdum. Sed vel mi sollicitudin, viverra odio eget, aliquet sapien. Nulla dapibus dui sit amet tellus consequat, eu fringilla lorem fermentum. Fusce vel vestibulum est, in interdum tortor. Praesent a bibendum dolor, in auctor ligula. Fusce pulvinar tempus orci quis placerat. Vivamus ornare augue quis est venenatis, eu consequat dui feugiat. Nulla ac augue nec enim sagittis mollis nec sed orci. Integer lobortis turpis vel metus sodales, eu venenatis neque lobortis. Maecenas non arcu consectetur, blandit odio sed, sollicitudin lorem. Aenean et lectus hendrerit, pharetra mi dictum, finibus mauris.</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

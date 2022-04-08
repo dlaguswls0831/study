@@ -285,6 +285,7 @@ body{
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
+    direction: rtl;
 }
 .content.cnt02 .image{
     width: calc(100% / 12 * 2.9);
@@ -295,6 +296,7 @@ body{
     width: calc(100% / 12 * 9);
     display: flex;
     justify-content: space-between;
+    direction: ltr;
 }
 .content.cnt02 .txtLeft{
     width: calc(100% / 9 * 1.5);
