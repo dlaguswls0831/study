@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/day54_exe02.css">
+    <style>
+        section{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        article:hover .texts{
+            transform: rotateZ(180deg);
+            opacity: 0;
+        }
+        article:hover .image{
+            transform: rotateZ(0deg);
+        }
+        article{
+            width: calc(100% / 4 - 20px); 
+            /* 원근감은 움직이는 요소의 부모에게 줘야한다 */
+            perspective: 1000px;
+        }
+        .image{
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: rotateZ(180deg);
+            backface-visibility: hidden;
+            transition: transform 1s;
+        }
+        .image.i1{
+            background-image: url('./images/cnt01_pic01.jpg');
+        }
+        .image.i2{
+            background-image: url('./images/cnt01_pic02.jpg');
+        }
+        .image.i3{
+            background-image: url('./images/cnt01_pic03.jpg');
+        }
+        .image.i4{
+            background-image: url('./images/bnrbg.jpg');
+        }
+        .texts{
+            margin-top: -240px;
+            height: 240px;
+            background-color: #ccc;
+            padding: 20px;
+            transform: rotateZ(0deg);
+            backface-visibility: hidden;
+            transition: transform 1s;
+        }
+        .texts h3{
+            font-size: 15px;
+            line-height: 40px;
+        }
+        .texts p{
+            font-size: 12px;
+            line-height: 20px;
+            height: 80px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <article>
+            <div class="image i1"></div>
+            <div class="texts">
+                <h3>segment title</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, eius adipisci placeat repudiandae quis fuga fugiat labore atque consequuntur iure animi dolores incidunt laboriosam unde impedit earum, delectus sed illo.m</p>
+            </div>
+        </article>
+        <article>
+            <div class="image i2"></div>
+            <div class="texts">
+                <h3>segment title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, voluptas. Nulla velit qui animi consequatur ullam voluptatibus culpa, quisquam debitis rerum laborum, ipsum magnam doloremque numquam in cumque, suscipit corrupti?</p>
+            </div>
+        </article>
+        <article>
+            <div class="image i3"></div>
+            <div class="texts">
+                <h3>segment title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus provident asperiores delectus molestias error cumque minus dolores qui! Ullam nesciunt dolorem saepe pariatur quidem! Saepe quidem quia inventore magnam libero.</p>
+            </div>
+        </article>
+        <article>
+            <div class="image i4"></div>
+            <div class="texts">
+                <h3>segment title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta labore ea sequi aliquid consectetur ut dolorem nihil suscipit iusto voluptatibus. Sequi impedit harum illo temporibus assumenda asperiores quod iusto cumque?</p>
+            </div>
+        </article>
+    </section>
+</body>
+</html>
