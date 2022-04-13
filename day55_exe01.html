@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무한슬라이드(페이징)</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .artGroup{
+            width: 500%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .article{
+            width: calc(100% / 5 - 20px);
+        }
+        .image{
+            height: 500px;
+        }
+        .image.i1{
+            background-color: red;
+        }
+        .image.i2{
+            background-color: orange;
+        }
+        .image.i3{
+            background-color: green;
+        }
+        .image.i4{
+            background-color: blue;
+        }
+        .image.i5{
+            background-color: violet;
+        }
+        .paging{
+            width: 20%;
+            display: flex;
+            position: absolute;
+            bottom: 50px;
+            left: 0; right: 0;margin: auto;
+        }
+        .paging>li{
+            width: 20px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 20px;
+            margin: 0px 5px;
+            transition: width 0.5s;
+        }
+        li.on{
+            width: 40px;
+            background-color: #666;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var btn = $('button');
+            var artG = $('.artGroup');
+            var pag = $('.paging');
+            var artNum =0;
+
+            // 함수
+            function left(){
+                artG.animate({
+                    marginLeft : 0
+                },500,function(){
+                    artG.find('.article:last').prependTo(artG);
+                    artG.css('margin-left','-100%');
+                    artNum= artG.find('.article:eq(1)').attr('data-num');
+                    pag.find('li').removeClass('on');
+                    pag.find('li').eq(artNum).addClass('on');
+                });
+            }
+            function rigth(){
+                artG.animate({
+                    marginLeft : '-200%'
+                },500,function(){
+                    artG.find('.article:first').appendTo(artG);
+                    artG.css('margin-left','-100%');
+                    artNum= artG.find('.article:eq(1)').attr('data-num');
+                    pag.find('li').removeClass('on');
+                    pag.find('li').eq(artNum).addClass('on');
+                });
+            }
+
+            //슬라이드 기초세팅
+            artG.find('.article:last').prependTo(artG);
+            artG.css('margin-left','-100%');
+            
+            // 슬라이드
+            pag.find('li').click(function(){
+                var pagNum = $(this).index();
+                if(artNum<pagNum){
+                    for(var i=artNum; i<pagNum; i++){
+                        rigth()
+                    }
+                }else{
+                    for(var i=pagNum; i<artNum; i++){
+                        left()
+                    }
+                }
+            });
+            btn.first().click(rigth);
+            btn.last().click(left);
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="artGroup">
+            <div class="article" data-num="0">
+                <div class="image i1">1</div>
+            </div>
+            <div class="article" data-num="1">
+                <div class="image i2">2</div>
+            </div>
+            <div class="article" data-num="2">
+                <div class="image i3">3</div>
+            </div>
+            <div class="article" data-num="3">
+                <div class="image i4">4</div>
+            </div>
+            <div class="article" data-num="4">
+                <div class="image i5">5</div>
+            </div>
+        </div>
+        <ul class="paging">
+            <li class="on"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <button>‹</button>
+        <button>›</button>
+    </div>
+</body>
+</html>
