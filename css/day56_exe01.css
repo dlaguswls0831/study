@@ -1,0 +1,59 @@
+html{
+    /* 높이,라인하이트 40px기준 1rem=40px */
+    font-size: 3vw;
+}
+body{
+    /* 폰트사이즈 10px기준 1em=10px */
+    font-size: 0.7vw;
+}
+.mntWrap{
+    background-color: #000;
+    outline: 1px solid red;
+}
+.mnTop{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    color: #fff;
+    /* max를 쓰면 두 값중 더 큰값을쓰고 min을 써야 커졌을때 
+    더이상 이 이상 폰트 사이즈가 커지지않고 작은 값을 들고 오도록 설정해준다 */
+    line-height: min(1rem,40px);
+    max-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    font-size: min(1.6em,16px);
+}
+.mnTop .info{
+    display: flex;
+}
+.mnTop nav{
+    display: flex;
+}
+
+.hdrWrap{
+    background-color: #000;
+    outline: 1px solid blue;
+    
+}
+.hdrWrap h1{
+    font-size: 2.4em;
+    text-transform: uppercase;
+}
+.hdrWrap header{
+    line-height: 2rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+.hdrWrap nav{
+    display: flex;
+    font-size: 1.6em;
+}
+
+.mainWrap{
+    background-color: #000;
+    height: 5rem;
+}
