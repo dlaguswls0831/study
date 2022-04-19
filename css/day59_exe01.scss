@@ -1,0 +1,43 @@
+$conTitle: 36px;
+$lh: 40px;
+$p: 12px;
+$plh: 20px;
+$h3: 24px;
+$li: 14px;
+
+.cntWrap{
+    .content{
+        width: 80%;
+        max-width: 1080px;
+        margin: 0 auto;
+        header{
+            h2{
+                font-size: $conTitle;
+                line-height: $lh;
+            }
+            p{
+                font-size: $p;
+                height: $lh;
+                line-height: $plh;
+            }
+        }
+        section{
+            display: flex;
+            justify-content: space-between;
+            article{
+                width: calc(100% / 4 - 20px);
+                .image{
+                    height: 200px;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    @for $i from 1 through 4{
+                        &.i#{$i}{
+                            background-image: url('../images/test_pic0#{$i}.jpg');
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,3 +1,5 @@
+$titleFz:16px;
+
 body{
     .image{
         background-color: #ccc;
@@ -13,7 +15,7 @@ body{
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
-        font-size: 16px;
+        font-size: $titleFz;
         line-height: 40px;
         text-transform: uppercase;
         .info{
@@ -103,7 +105,7 @@ body{
                 justify-content: space-around;
                 width: calc(100% / 4 - 20px);
                 margin: 0px 10px;
-                font-size: 16px;
+                font-size: $titleFz;
                 line-height: 60px;
                 border-radius: 10px;
                 text-transform: uppercase;
@@ -252,11 +254,10 @@ body{
                                 content: 'N';
                                 background-color: red;
                                 color: #fff;
-                                padding: 2px 5px;
+                                padding: 4px 6px;
                                 border-radius: 50%;
                                 margin-left: 10px;
-                                font-size: 12px;
-
+                                font-size: 10px;
                             }
                         }
                     }
@@ -319,7 +320,6 @@ body{
         }
         section{
             article{
-                .image{}
                 .texts{
                     p{
                         font-size: 12px;
