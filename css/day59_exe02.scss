@@ -1,19 +1,35 @@
-$mt12: 120px;
-$mt8:80px;
-$navlh: 40px;
-$cntitle: 36px;
-$pFz: 14px;
-$plh: 20px;
-$h3: 24px;
+$mt12: #{'min(3rem,120px)'};
+$mt8:#{'min(2rem,80px)'};
+$navlh: #{'min(1rem,40px)'};
+$cntitle: #{'min(3.6em,36px)'};
+$pFz: #{'min(1.4em,14px)'};
+$plh: #{'min(0.5rem,20px)'};
+$h3: #{'min(2.4em,24px)'};
 $fw:700;
 $cW: #fff;
+
+@mixin bg{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@mixin grid {
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+html{
+    font-size: 3vw;
+    body{
+        font-size: 0.7vw;
+    }
+}
 
 .hdrWrap{
     background: linear-gradient(90deg, #ff6700, #ff9900);
     header{
-        width: 80%;
-        max-width: 1080px;
-        margin: 0 auto;
+        @include grid;
         display: flex;
         justify-content: space-between;
         color: $cW;
@@ -213,9 +229,7 @@ $cW: #fff;
             justify-content: space-between;
             article{
                 .image{
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
+                    @include bg;
                 }
                 .texts{
                     padding: 20px 0px 0px 15px;
