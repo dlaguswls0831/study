@@ -1,28 +1,27 @@
-$lh8: #{'min(2rem,80px)'};
-$lh4: #{'min(1rem,40px)'};
-$lh2: #{'min(0.5rem,20px)'};
-$p: #{'min(1.4em,14px)'};
+$he2: #{'min(0.5rem,20px)'};
+$he4: #{'min(1rem,40px)'};
+$he8: #{'min(2rem,80px)'};
+$he12: #{'min(3rem,120px)'};
+$pfz: #{'min(1.4em,14px)'};
 $h2: #{'min(3.6em,36px)'};
 $h3: #{'min(2.4em,24px)'};
-$mt12: #{'min(3rem,120px)'};
 
-// scss의 함수
 
-@mixin ff($fontname,$url){
+@mixin font($fontname,$url){
     @font-face {
         font-family: '#{$fontname}';
         src: url('./fonts/#{$url}') format('truetype');
     }
 }
 
-// 폰트체이스 선언 완료
-@include ff(ha,'HANBatang.ttf');
+@include font(ha,'HANBatang.ttf');
+@include font(do,'Dokdo-Regular.ttf');
+@include font(sq,'SquarePeg-Regular.ttf');
 
 @mixin grid($dev){
-    @if($dev=='mob'){
+    @if($dev=='tab'){
         width: 90%;
         max-width: 700px;
-        background-color: red;
     }
     @else{
         width: 80%;
@@ -31,10 +30,17 @@ $mt12: #{'min(3rem,120px)'};
     margin: 0 auto;
 }
 
-@mixin bgset {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+@mixin co($coname){
+    @if($coname=='hdrp'){
+        color: orange;
+    }
+    @else if($coname=='artp'){
+        color: blue;
+    }
+    @else{
+        color: #666;
+    }
+    
 }
 
 @mixin flex {
@@ -42,29 +48,36 @@ $mt12: #{'min(3rem,120px)'};
     justify-content: space-between;
 }
 
+@mixin bgset {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 html{
     font-size: 3vw;
+    font-family: ha;
     body{
         font-size: 0.7vw;
     }
 }
 
 .hdrWrap{
-    background: linear-gradient(90deg, #ff6700, #ff9900);
+    background-color: orangered;
     color: #fff;
     header{
-        @include grid('pc');
-        @include flex;
-        line-height: $lh8;
-        text-transform: uppercase;
+       @include grid('pc');
+       @include flex;
+       line-height: $he8;
+       text-transform: uppercase;
         h1{
             width: calc(100% / 12 * 1);
             font-size: $h3;
-            font-family: ha;
         }
         nav{
             width: calc(100% / 12 * 7);
             font-weight: 700;
+            font-size: $pfz;
             @include flex;
             h4{
                 cursor: pointer;
@@ -76,14 +89,13 @@ html{
 .navBoxWrap{
     background-color: #666;
     color: #fff;
-    padding: #{'min(1rem,40px)'} 0;
     .navBox{
-        // @include gride;
+        @include grid('pc');
         @include flex;
         nav{
             width: calc(100% / 12 * 2);
-            font-size: $p;
-            line-height: $lh4;
+            font-size: $pfz;
+            line-height: $he4;
             border-right: 1px solid white;
             &:nth-child(1){
                 border-left: 1px solid white;
@@ -94,6 +106,9 @@ html{
                     font-weight: 700;
                     text-transform: uppercase;
                 }
+                &:nth-child(1)~h4{
+                    font-family: sq;
+                }
             }
         }
     }
@@ -103,31 +118,31 @@ html{
     background-color: #bfbfbf;
     padding: #{'min(6rem,240px)'} 0 #{'min(9rem,360px)'};
     main{
-        // @include gride;
+        @include grid('pc');
         h2{
             font-size: 72px;
-            line-height: $lh8;
+            line-height: $he8;
             text-transform: uppercase;
+            font-family: sq;
         }
         p{
             width: calc(100% / 12 * 6);
             margin-top: 40px;
             font-size: $h3;
-            line-height: $lh4;
-            height: $mt12;
+            line-height: $he4;
+            height: $he12;
             overflow: hidden;
             color: #666;
 
-        } 
+        }
     }
 }
 
 .cntWrap{
-    margin-top: $mt12;
+    margin-top: $he12;
     .content{
-        // @include gride;
+        @include grid('pc');
         &.cnt01{
-            header{}
             section{
                 article{
                     width: calc(100% / 4 - 20px);
@@ -143,13 +158,13 @@ html{
                         padding: 30px 20px 0px 15px;
                         ul{
                             li{
-                                font-size: $p;
+                                font-size: $pfz;
                                 line-height: #{'min(0.75rem,30px)'};
                             }
                         }
                         .sns{
                             font-size: $h3;
-                            line-height: $lh4;
+                            line-height: $he4;
                             text-align: right;
                         }
                     }
@@ -163,10 +178,10 @@ html{
                     &.artLeft{
                         article{
                             @include flex;
-                            margin-top: $lh4;
+                            margin-top: $he4;
                             .image{
                                 width: calc(100% / 4 * 1 - 10px);
-                                height: $lh8;
+                                height: $he8;
                                 border-radius: 50%;
                                 @for $i from 1 through 3{
                                     &.i#{$i}{
@@ -177,7 +192,7 @@ html{
                             .texts{
                                 width: calc(100% / 4 * 3 - 10px);
                                 p{
-                                    height: $lh4;
+                                    height: $he4;
                                     overflow: hidden;
                                 }
                             }
@@ -195,10 +210,10 @@ html{
                         article{
                             @include flex;
                             direction: rtl;
-                            margin-top: $lh4;
+                            margin-top: $he4;
                             .image{
                                 width: calc(100% / 4 * 1 - 10px);
-                                height: $lh8;
+                                height: $he8;
                                 border-radius: 50%;
                                 @for $i from 1 through 3{
                                     &.i#{$i}{
@@ -209,7 +224,7 @@ html{
                             .texts{
                                 width: calc(100% / 4 * 3 - 10px);
                                 p{
-                                    height: $lh4;
+                                    height: $he4;
                                     overflow: hidden;
                                 }
                             }
@@ -222,21 +237,22 @@ html{
             text-align: center;
             h2{
                 font-size: $h2;
-                line-height: $lh8;
+                line-height: $he8;
                 text-transform: capitalize;
                 font-weight: 700;
             }
             p{
                 width: calc(100% / 12 * 5);
-                line-height: $lh2;
-                height: $lh4;
-                font-size: $p;
+                line-height: $he2;
+                height: $he4;
+                font-size: $pfz;
                 overflow: hidden;
                 margin: 0 auto;
+                @include co('hdrp');
             }
         }
         section{
-            margin-top: $lh8;
+            margin-top: $he8;
             @include flex;
             article{
                 margin: 0px 10px;
@@ -246,9 +262,15 @@ html{
                 .texts{
                     h3{
                         font-size: $h3;
-                        line-height: $lh4;
+                        line-height: $he4;
                         text-transform: capitalize;
                         font-weight: 700;
+                    }
+                    li{
+                        @include co('artp');
+                    }
+                    p{
+                        @include co('artp');
                     }
                 }
             }
@@ -257,11 +279,11 @@ html{
 }
 
 .bnrWrap{
-    margin-top: $mt12;
+    margin-top: $he12;
     background-color: #333;
     padding: 80px 0px;
     .banner{
-        // @include gride;
+        @include grid('pc');
         .images{
             @include flex;
             .image{
@@ -281,32 +303,32 @@ html{
 
 .ftrWrap{
     padding: 80px 0;
-    margin-top: $mt12;
+    margin-top: $he12;
     background-color: #000;
     color: #fff;
     footer{
-        // @include gride;
+        @include grid('pc');
         @include flex;
         .ftrLeft{
             width: calc(100% / 12 * 3);
             h1{
                 font-size: #{'min(1.6em,16px)'};
-                line-height: $lh4;
+                line-height: $he4;
                 text-transform: uppercase;
             }
             .sns{
                 font-size: $h2;
-                line-height: $lh8;
+                line-height: $he8;
             }
             p{
-                line-height: $lh4;
-                font-size: $p;
+                line-height: $he4;
+                font-size: $pfz;
             }
         }
         .ftrRight{
             width: calc(100% / 12 * 5);
-            font-size: $p;
-            line-height: $lh4;
+            font-size: $pfz;
+            line-height: $he4;
             nav{
                 @include flex;
                 text-transform: uppercase;
@@ -316,9 +338,48 @@ html{
                 background-color: rgb(163, 161, 161);
                 border-radius: 20px;
                 text-align: center;
-                margin-top: $lh8;
+                margin-top: $he8;
                 margin-left: auto;
             }
+        }
+    }
+}
+
+// tab
+@media (max-width:1024px) and (min-width:0px){
+    .hdrWrap{
+        header{
+           @include grid('tab');
+        }
+    }
+
+    .navBoxWrap{
+        .navBox{
+            @include grid('tab');
+        }
+    }
+
+    .mainWrap{
+        main{
+            @include grid('tab');
+        }
+    }
+
+    .cntWrap{
+        .content{
+            @include grid('tab');
+        }
+    }
+
+    .bnrWrap{
+        .banner{
+            @include grid('tab');
+        }
+    }
+
+    .ftrWrap{
+        footer{
+            @include grid('tab');
         }
     }
 }
