@@ -1,10 +1,11 @@
+// 변수선언
 $he2: #{'min(0.5rem,20px)'};
 $he4: #{'min(1rem,40px)'};
 $he8: #{'min(2rem,80px)'};
 $he12: #{'min(3rem,120px)'};
-$pfz: #{'min(1.4em,14px)'};
 $h2: #{'min(3.6em,36px)'};
 $h3: #{'min(2.4em,24px)'};
+$pfz: #{'min(1.4em,14px)'};
 
 
 @mixin font($fontname,$url){
@@ -14,10 +15,17 @@ $h3: #{'min(2.4em,24px)'};
     }
 }
 
+@mixin tab {
+    @media (max-width: 1024px) and (min-width: 0px){
+        @content;
+    }
+}
+
 @include font(ha,'HANBatang.ttf');
 @include font(do,'Dokdo-Regular.ttf');
 @include font(sq,'SquarePeg-Regular.ttf');
 
+// 내용만 들고오는 함수,변수는 하나만 들어와지는데 믹스인은 여러개를 들고올수 있다
 @mixin grid($dev){
     @if($dev=='tab'){
         width: 90%;
@@ -63,11 +71,17 @@ html{
 }
 
 .hdrWrap{
-    background-color: orangered;
+    background-color: #fc0;
+    @include tab{
+        background-color: #000;
+    }
     color: #fff;
     header{
        @include grid('pc');
        @include flex;
+       @include tab{
+           @include grid('tab');
+       }
        line-height: $he8;
        text-transform: uppercase;
         h1{
@@ -148,6 +162,7 @@ html{
                     width: calc(100% / 4 - 20px);
                     .image{
                         height: #{'min(4.5rem,180px)'};
+                        transform : rotate(1deg);
                         @for $i from 1 through 4{
                             &.i#{$i}{
                                 background-image: url('../images/pic0#{$i}.jpg');
@@ -347,12 +362,6 @@ html{
 
 // tab
 @media (max-width:1024px) and (min-width:0px){
-    .hdrWrap{
-        header{
-           @include grid('tab');
-        }
-    }
-
     .navBoxWrap{
         .navBox{
             @include grid('tab');
