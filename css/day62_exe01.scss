@@ -1,0 +1,311 @@
+$fz14 : #{'min(1.4em,14px)'};
+$fz18 : #{'min(1.8em,18px)'};
+$fz24 : #{'min(2.4em,24px)'};
+$fz36 : #{'min(3.6em,36px)'};
+$h20 : #{'min(0.5rem,20px)'};
+$h40 : #{'min(1rem,40px)'};
+$h80 : #{'min(2rem,80px)'};
+
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin grid {
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+@mixin bgset {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+html{
+    font-size: 3vw;
+    body{
+        font-size: 0.7vw;
+    }
+}
+
+.hdrWrap{
+    background-color: orange;
+    color: #fff;
+    header{
+        @include grid;
+        @include flex;
+        line-height: $h80;
+        text-transform: uppercase;
+        .hdrLeft{
+            width: calc(100% / 12 * 7);
+            @include flex;
+            h1{
+                width: calc(100% / 7 * 1.5);
+                font-size: $fz18;
+            }
+            nav{
+                width: calc(100% / 7 * 5.5);
+                @include flex;
+                font-size: $fz18;
+                font-weight: 700;
+            }
+        }
+        .hdrRight{
+            i{
+                font-size: $fz24;
+            }
+        }
+    }
+}
+
+.navBoxWrap{
+    background-color: #666;
+    color: #fff;
+    padding: #{'min(1rem,40px)'} 0;
+    .navBox{
+        @include flex;
+        @include grid;
+        nav{
+            width: calc(100% / 6 - 20px );
+            margin: 0px 10px;
+            border-left: 1px solid white;
+            padding-left: 20px;
+            &:nth-last-child(1){
+                border-right: 1px solid white;
+            }
+            h4{
+                font-size: $fz14;
+                line-height: $h40;
+                &:nth-child(1){
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+.cntWrap{
+    margin-top: $h80;
+    .content{
+        @include grid;
+        &.cnt01{
+            overflow: hidden;
+            header{
+                text-align: center;
+                p{
+                    margin: 0 auto;
+                }
+            }
+            section{
+                width: 266.66%;
+                @include flex;
+                article{
+                    &:nth-child(2){
+                        .image{
+                            span{
+                                opacity: 1;
+                            }
+                        }
+                        .texts{
+                            opacity: 1;
+                        }
+                    }
+                    width: calc(100% / 8 - 40px);
+                    margin: 0px 10px;
+                    .image{
+                        height: #{'min(9rem,360px)'};
+                        position: relative;
+                        span{
+                            width: calc(100% / 4 * 1);
+                            writing-mode: vertical-rl;
+                            font-size: 48px;
+                            position: absolute;
+                            left: -50px;
+                            opacity: 0;
+                        }
+                    }
+                    .texts{
+                        @include flex;
+                        flex-wrap: wrap;
+                        opacity: 0;
+                        .txt{
+                            width: calc(100% / 4 * 2.8);
+                            font-size: $fz14;
+                            h3{
+                                line-height: $h40;
+                                font-weight: 700;
+                            }
+                            p{
+                                line-height: $h20;
+                                height: $h40;
+                            }
+                        }
+                        .sns{
+                            width: calc(100% / 4 * 1);
+                            .num{
+                                text-align: right;
+                                line-height: $h40;
+                            }
+                            .icon{
+                                line-height: $h40;
+                                text-align: right;
+                                font-size: $fz24;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.cnt02{
+            width: 100%;
+            max-width: 100%;
+            header{
+                @include grid;
+                text-align: center;
+                p{
+                    margin: 0 auto;
+                }
+            }
+            section{
+                .image{
+                    height: #{'min(10rem,400px)'};
+                    background-color: #ccc;
+                }
+            }
+        }
+        &.cnt03{
+            header{
+                margin-left: 40px;
+            }
+            section{
+                @include flex;
+                article{
+                    &:nth-child(1){
+                        width: calc(100% / 12 * 5 - 20px);
+                        display: flex;
+                        flex-wrap: wrap;
+                        flex-direction: column-reverse;
+                        .image{
+                            margin-top: 40px;
+                        }
+                        .texts{
+                            width: calc(100% / 5 * 3.5);
+                        }
+                    }
+                    &:nth-child(2){
+                        width: calc(100% / 12 * 7 - 20px);
+                        .texts{
+                            margin-top: 40px;
+                            width: calc(100% / 7 * 6);
+                        }
+                    }
+                    margin: 0px 10px;
+                    .image{
+                        height: #{'min(11rem,440px)'};
+                    }
+                    .texts{
+                        margin-left: 40px;
+                        h3{
+                            font-size: $fz24;
+                            line-height: $h40;
+                            text-transform: capitalize;
+                            font-weight: 700;
+                        }
+                        p{
+                            font-size: $fz14;
+                            line-height: $h20;
+                            height: $h80;
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+        }
+        &.cnt04{
+            header{
+                text-align: center;
+                p{
+                    margin: 0 auto;
+                }
+            }
+            section{
+                @include flex;
+                flex-wrap: wrap;
+                article{
+                    &:nth-child(2)~article{
+                        margin-top: $h40;
+                    }
+                    width: calc(100% / 12 * 6 - 20px);
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column-reverse;
+                    .barBg{
+                        background-color: #ccc;
+                        height: $h20;
+                        border-radius: 5px;
+                        .bar{
+                            width: 80%;
+                            background-color: blue;
+                            height: $h20;
+                            border-radius: 5px;
+                        }
+                    }
+                    .texts{
+                        @include flex;
+                        line-height: $h40;
+                    }
+                }
+            }
+        }
+        header{
+            h2{
+                font-size: $fz36;
+                line-height: $h80;
+                text-transform: capitalize;
+                font-weight: 700;
+            }
+            p{
+                font-size: $fz14;
+                line-height: $h20;
+                width: calc(100% / 12 * 4.5);
+                height: $h40;
+                overflow: hidden;
+            }
+        }
+        section{
+            margin-top: $h80;
+            article{
+                .image{
+                    background-color: #ccc;
+                }
+            }
+        }
+    }
+}
+
+.ftrWrap{
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0px;
+    margin-top: $h80;
+    footer{
+        @include grid;
+        @include flex;
+        h1{
+            width: calc(100% / 12 * 1);
+            font-size: $fz18;
+            line-height: $h80;
+            text-transform: uppercase;
+        }
+        p{
+            width: calc(100% / 12 * 6);
+            line-height: $h20;
+            height: $h40;
+            overflow: hidden;
+            margin-top: 20px;
+            text-align: right;
+        }
+    }
+}
