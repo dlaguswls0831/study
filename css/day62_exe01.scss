@@ -27,12 +27,16 @@ html{
     font-size: 3vw;
     body{
         font-size: 0.7vw;
+        position: relative;
     }
 }
 
 .hdrWrap{
     background-color: orange;
     color: #fff;
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
     header{
         @include grid;
         @include flex;
