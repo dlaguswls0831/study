@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day64_exe01.html</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        body{
+            overflow-y: hidden;
+        }
+        div{
+            width: 100vw;
+            height: 100vh;
+            font-size: 100px;
+            text-align: center;
+            color: #fff;
+        }
+        div:nth-child(1){
+            background-color: rgb(150, 150, 221);
+        }
+        div:nth-child(2){
+            background-color: rgb(75, 75, 166);
+        }
+        div:nth-child(3){
+            background-color: rgb(35, 35, 116);
+        }
+        div:nth-child(4){
+            background-color: rgb(6, 6, 57);
+        }
+        div:nth-child(5){
+            background-color: rgb(0, 0, 2);
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            var loc = [$('body>div')];
+            var cnt = 0;
+            var flag = true;
+            var now =  0;
+            for(var i = 0; i < $('div').length; i++){
+                loc[i] = $('body>div').eq(i).offset().top;
+            }
+            $(window).on('mousewheel',function(eve){
+                now= eve.originalEvent.wheelDelta;
+                if(flag){
+                    if(now<0){
+                        cnt++;
+                        flag=false;
+                        if(cnt>=4) cnt=4;
+                    }else{
+                        cnt--;
+                        flag=false;
+                        if(cnt<=0) cnt=0;
+                    }
+                    $('html').animate({
+                        scrollTop : loc[cnt]
+                    },500,'easeInOutBack',function(){
+                        flag = true;
+                    });
+                }
+                //문이 닫히면 아무것도 일어나지 않아요 !
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</body>
+</html>
