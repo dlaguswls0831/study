@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drag 플러그 실습</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        /* .container{
+            width: 1000px;
+            height: 1000px;
+            border: 2px solid red;
+        }
+        .drag{
+            width: 200px;
+            height: 200px;
+            background-color: #fc0;
+        }
+        .drop{
+            width: 500px;
+            height: 500px;
+            background-color: #ccc;
+            transition: all 0.5s;
+        } */
+        ul{}
+        li{
+            width: 50%;
+            height: 50px;
+            background-color: orange;
+            margin-top: 20px;
+        }
+        </style>
+        <script src="./js/jquery-3.6.0.min.js"></script>
+        <script src="./js/jquery-ui.min.js"></script>
+        <script>
+            $(function(){
+                var dg = $('.drag');
+                // 오브젝트형 데이터는 var={key:keyvalue,key:keyvalue};
+                // 사용할때 데이터에 이름을 꼭 지어줘야한다
+                $('.drag').draggable({
+                    helper:'clone',
+                    revert:true,
+                    // 플러그인이라서 그냥 선택자를 들고와도된다
+                    containment:'.container'
+                });
+                $('.drop').droppable({
+                    // 드롭을 했을때 실행되는 콜백함수
+                    drop:function(){
+                        $('.drop').css({
+                            width : dg.css('width'),
+                            height : dg.css('height'),
+                            backgroundColor : dg.css('background-color'),
+                        })
+                    }
+                });
+                $('ul').sortable();
+            });
+        </script>
+</head>
+<body>
+    <div class="container">
+        <div class="drag"></div>
+        <div class="drop"></div>
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>

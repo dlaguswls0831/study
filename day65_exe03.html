@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .cntWrap{
+            margin-top: 120px;
+        }
+        .content{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .bars{
+            height: 40px;
+            background-color: #ccc;
+            position: relative;
+        }
+        .bar{
+            width: calc(100% / 12 * 1);
+            background-color: #332a29;
+            height: 40px;
+            position: absolute;
+            left: 0; top: 0;
+        }
+        section{
+            margin-top: 40px;
+            width: 200%;
+            display: flex;
+            justify-content: space-between;
+        }
+        article{
+            width: calc(100% / 8 - 20px);
+        }
+        .image{
+            height: 280px;
+            background-color: #ccc;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .image.i1{
+            background-image: url('./images/pic01.jpg');
+        }
+        .image.i2{
+            background-image: url('./images/pic02.jpg');
+        }
+        .image.i3{
+            background-image: url('./images/pic03.jpg');
+        }
+        .image.i4{
+            background-image: url('./images/pic04.jpg');
+        }
+        .image.i5{
+            background-image: url('./images/pin01.jpg');
+        }
+        .image.i6{
+            background-image: url('./images/pin02.jpg');
+        }
+        .image.i7{
+            background-image: url('./images/pin03.jpg');
+        }
+        .image.i8{
+            background-image: url('./images/pin04.jpg');
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            // px 문자가 있어서 parseInt로 모두 숫자로 반환시켜주었다
+            var w=parseInt($('.bars').css('width'));
+            $('.bar').draggable({
+                containment:'.bars',
+                // x축으로만 드래그될수있도록 잡아주는 공식
+                axis:'x',
+                drag:function(){
+                    // offset은 뷰포트 기준(fullpage)
+                    // 부모기준으로 가져올거여서 포지션으로 들고왔다
+                    // offset은 절대좌표를, position은 상대좌표값
+                    // 부모 요소의 좌측값을 기준으로 bar 엘리먼트 요소가 위치한 상대적 거리값
+                    var p=$(this).position().left;
+                    // 현재 드레그의 위치(left)/(나누기)부모너비*100(퍼센트로 나올수있는 값)
+                    var ba=p/w*108.3;
+                    console.log(ba);
+                    $('section').css('margin-left',-ba+'%');
+                }   
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="content">
+            <div class="bars">
+                <div class="bar"></div>
+            </div>
+            <section>
+                <article>
+                    <div class="image i1"></div>
+                </article>
+                <article>
+                    <div class="image i2"></div>
+                </article>
+                <article>
+                    <div class="image i3"></div>
+                </article>
+                <article>
+                    <div class="image i4"></div>
+                </article>
+                <article>
+                    <div class="image i5"></div>
+                </article>
+                <article>
+                    <div class="image i6"></div>
+                </article>
+                <article>
+                    <div class="image i7"></div>
+                </article>
+                <article>
+                    <div class="image i8"></div>
+                </article>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

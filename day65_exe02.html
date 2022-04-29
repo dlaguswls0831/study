@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .parent{
+            margin: 50px;
+            width: 500px;
+            height: 500px;
+            outline: 2px solid black;
+        }
+        .drags{
+            display: flex;
+            justify-content: space-around;
+        }
+        .draggable{
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .dr1{
+            background-image: url('./images/pic01.jpg');
+        }
+        .dr2{
+            background-image: url('./images/pic02.jpg');
+        }
+        .dr3{
+            background-image: url('./images/pic03.jpg');
+        }
+        .droppable{
+            width: 400px;
+            height: 400px;
+            background-color: #ccc;
+            margin: 0 auto;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            var drg=$('.draggable');
+            // 링크가 문자열로 들어올거라서 들어갈 자리를 한번 선언을 해주었다
+            var img='';
+            
+            $('.draggable').draggable({
+                // 헬퍼클론을 사용할땐 nth로 선택자를 잡아서 이미지를 넣으면 적용이 안된다
+                helper:'clone',
+                revert:true,
+                containment:'.parent',
+                drag:function(){
+                    img=$(this).css('background-image');
+                }
+            });
+            $('.droppable').droppable({
+                drop:function(){
+                    $('.droppable').css({
+                        backgroundImage: img,
+                        });
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="parent">
+        <div class="drags">
+            <div class="draggable dr1"></div>
+            <div class="draggable dr2"></div>
+            <div class="draggable dr3"></div>
+        </div>
+        <div class="droppable"></div>
+    </div>
+</body>
+</html>

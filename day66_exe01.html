@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습</title>
+    <link rel="stylesheet" href="./css/reset.css">
+</head>
+<style>
+    .cntWrap{
+        margin-top: 80px;
+    }
+    .content{
+        width: 80%;
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+    header{
+        text-align: center;
+    }
+    h2{
+        text-transform: capitalize;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 80px;
+    }
+    p{
+        width: calc(100% / 12 * 4.5);
+        margin: 0 auto;
+        font-size: 14px;
+        line-height: 20px;
+        height: 40px;
+        overflow: hidden;
+    }
+    section{
+        margin-top: 80px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    article{
+        width: calc(100% / 12 * 6 - 20px);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+    .barBg{
+        background-color: #ccc;
+        height: 20px;
+        border-radius: 5px;
+    }
+    .bar{
+        width: 80%;
+        background-color: blue;
+        height: 20px;
+        border-radius: 5px;
+    }
+    .texts{
+        display: flex;
+        justify-content: space-between;
+        line-height: 40px;
+    }
+    h3{
+        text-transform: capitalize;
+        font-weight: 700;
+    }
+    h5{
+        font-weight: 700;
+    }
+</style>
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script>
+    $(function(){
+
+        var tt = $('.texts h5');
+        var i = parseInt($('span').eq(0).text());
+        
+        tt.each(function(a){
+            var j=$(this).attr('date-num');
+            console.log(j);
+
+            // percent 지어준 이름
+            $({percent:0}).animate({percent:j},{
+                duration: 5000,
+                // 프로그래스를 찾는 this
+                progress: function(){
+                    // console.log(this.percent);
+                    // $('h2').text(parseInt(this.percent));
+                    $('span').eq(a).text(parseInt(this.percent));
+                    $('.bar').eq(a).css('width',this.percent+'%');
+                }
+            });
+        });
+    });
+</script>
+<body>
+    <div class="cntWrap">
+        <div class="content cnt04">
+            <header>
+                <h2>division title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis tempore itaque est, optio incidunt ipsa ipsum totam sunt labore dolorem similique maxime numquam fugit asperiores nostrum ducimus praesentium, ut nulla.</p>
+            </header>
+            <section>
+                <article>
+                    <div class="barBg">
+                        <div class="bar"></div>
+                    </div>
+                    <div class="texts">
+                        <h3>segmemt</h3>
+                        <h5 date-num="100"><span>80</span>%</h5>
+                    </div>
+                </article>
+                <article>
+                    <div class="barBg">
+                        <div class="bar"></div>
+                    </div>
+                    <div class="texts">
+                        <h3>segmemt</h3>
+                        <h5 date-num="90"><span>80</span>%</h5>
+                    </div>
+                </article>
+                <article>
+                    <div class="barBg">
+                        <div class="bar"></div>
+                    </div>
+                    <div class="texts">
+                        <h3>segmemt</h3>
+                        <h5 date-num="80"><span>80</span>%</h5>
+                    </div>
+                </article>
+                <article>
+                    <div class="barBg">
+                        <div class="bar"></div>
+                    </div>
+                    <div class="texts">
+                        <h3>segmemt</h3>
+                        <h5 date-num="70"><span>80</span>%</h5>
+                    </div>
+                </article>
+                <article>
+                    <div class="barBg">
+                        <div class="bar"></div>
+                    </div>
+                    <div class="texts">
+                        <h3>segmemt</h3>
+                        <h5 date-num="60"><span>80</span>%</h5>
+                    </div>
+                </article>
+                <article>
+                    <div class="barBg">
+                        <div class="bar"></div>
+                    </div>
+                    <div class="texts">
+                        <h3>segmemt</h3>
+                        <h5 date-num="50"><span>80</span>%</h5>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
