@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg 실습(백터그래픽)</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        svg {
+            width: 220px;
+            height: 220px;
+        }
+        svg>circle{
+            fill: transparent;
+            stroke: cadetblue;
+            stroke-width: 10;
+            stroke-dasharray: 629;
+            stroke-dashoffset: 629;
+            transform-origin: 50%;
+            transform: rotate(-90deg);
+            stroke-linecap: round;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var percent =0;
+            $({per:0}).animate({per:100},{
+                duration : 2000,
+                // 629를 퍼센트를 곱하고 100으로 나눈다 (629*per/100)
+                // 전체stroke-(전체str*per)/100 계산식
+                progress: function(){
+                    percent = 629 - ((629 * this.per) / 100);
+                    $('circle').css('stroke-dashoffset',percent);
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <!-- 텍스트를 넣을땐 형제요소로 넣어서 위치 옮겨주기 -->
+    <svg>
+        <circle cx="110" cy="110" r="100"></circle>
+    </svg>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1번문제</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .cntWrap{
+            margin-top: 120px;
+        }
+        .content{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        header{
+            text-align: center;
+        }
+        h2{
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 80px;
+        }
+        p{
+            width: calc(100% / 12 * 5);
+            margin: 0 auto;
+            height: 40px;
+            overflow: hidden;
+            line-height: 20px;
+        }
+        section{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        article{
+            width: calc(50% - 20px);
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .texts{
+            display: flex;
+            justify-content: space-between;
+            line-height: 40px;
+        }
+        .progBars{
+            background-color: #ccc;
+            height: 30px;
+            border-radius: 10px;
+            
+        }
+        .probar{
+            background-color: blue;
+            height: 30px;
+            width: 0%;
+            border-radius: 10px;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            
+            $('article').mouseenter(function(){
+                var h= parseInt($(this).find('h5').attr('date-num'));
+                var ind=$(this).index();
+                $({percent:0}).animate({percent:h},{
+                    duration: 5000,
+                    progress: function(){
+                        $('span').eq(ind).text(parseInt(this.percent));
+                        $('.probar').eq(ind).css('width',this.percent+'%');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="content">
+            <header>
+                <h2>Division Title</h2>
+                <p>at vero eos et accusamus et iubsto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos</p>
+            </header>
+            <section>
+                <article>
+                    <div class="progBars">
+                        <div class="probar"></div>
+                    </div>
+                    <div class="texts">
+                        <h3>segment</h3>
+                        <h5 date-num="10"><span>0</span>%</h5>
+                    </div>
+                </article>
+                <article>
+                    <div class="progBars">
+                        <div class="probar"></div>
+                    </div>
+                    <div class="texts">
+                        <h3>segment</h3>
+                        <h5 date-num="20"><span>0</span>%</h5>
+                    </div>
+                </article>
+                <article>
+                    <div class="progBars">
+                        <div class="probar"></div>
+                    </div>
+                    <div class="texts">
+                        <h3>segment</h3>
+                        <h5 date-num="30"><span>0</span>%</h5>
+                    </div>
+                </article>
+                <article>
+                    <div class="progBars">
+                        <div class="probar"></div>
+                    </div>
+                    <div class="texts">
+                        <h3>segment</h3>
+                        <h5 date-num="40"><span>0</span>%</h5>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

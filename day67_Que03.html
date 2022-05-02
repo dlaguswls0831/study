@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg과제</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .cntWrap{
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        svg{
+            width: 320px;
+            height: 320px;
+        }
+        .article{
+            /* display: flex; */
+            width: calc(100% / 4 - 20px);
+            margin: 0px 10px;
+            position: relative;
+        }
+        svg>circle{
+            fill: transparent;
+            stroke: cadetblue;
+            stroke-width: 10;
+            stroke-dasharray: 629;
+            stroke-dashoffset: 629;
+            transform-origin: 50%;
+            transform: rotate(-90deg);
+            stroke-linecap: round;
+        }
+        h1{
+            width: 20%;
+            background-color: #ccc;
+            text-align: center;
+            border-radius: 20px;
+            position: absolute;
+            height: 20px;
+            top: 0; bottom: 0; right: 0; left: 60px; margin: auto;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var p=0;
+
+            $('.article').mouseenter(function(){
+                var j=parseInt($(this).find('h1').attr('data-num'));
+                var ind=$(this).index();
+                console.log(j)
+
+                $({per:0}).animate({per:j},{
+                    duration: 1000,
+                    progress: function(){
+                        p = 629-((629*this.per) / 100);
+                        $('circle').eq(ind).css('stroke-dashoffset',p);
+                        $('h1').eq(ind).text(parseInt(this.per)+'%');
+                        
+                    }
+                })
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="article">
+            <svg>
+                <circle cx="160" cy="160" r="100"></circle>
+            </svg>
+            <h1 data-num="100">0%</h1>
+        </div>
+        <div class="article">
+            <svg>
+                <circle cx="160" cy="160" r="100"></circle>
+            </svg>
+            <h1 data-num="80">0%</h1>
+        </div>
+        <div class="article">
+            <svg>
+                <circle cx="160" cy="160" r="100"></circle>
+            </svg>
+            <h1 data-num="50">0%</h1>
+        </div>
+        <div class="article">
+            <svg>
+                <circle cx="160" cy="160" r="100"></circle>
+            </svg>
+            <h1 data-num="25">0%</h1>
+        </div>
+        <div class="article">
+            <svg>
+                <circle cx="160" cy="160" r="100"></circle>
+            </svg>
+            <h1 data-num="8">0%</h1>
+        </div>
+    </div>
+</body>
+</html>
