@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿠키문제</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
+    <script src="./js/jquery.mobile.custom.min.js"></script>
+    <script>
+        $(function(){ 
+            // 2번문제
+            var username = prompt('이름을 작성해주세요');
+            if($.cookie(username)=='20'){
+                alert(username + '님 재방문입니다');
+            }else{
+                alert(username + '님 환영합니다');
+            }
+            $('.boxs>button').eq(0).click(function(){
+                $.cookie(username,'20',{expires : 7});
+                console.log($.cookie(username,));
+            });
+            $('.boxs>button').eq(1).click(function(){
+                var username = prompt('지우실 이름을 입력하세요');
+                $.cookie(username,'20',{expires : -1});
+            });
+
+            
+        });
+    </script>
+</head>
+<body>
+    <div class="boxs">
+        <button>쿠키 저장 버튼</button>
+        <button>쿠키 지우기 버튼</button>
+    </div>
+</body>
+</html>

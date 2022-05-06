@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿠키문제</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .lightBox{
+            width: 500px;
+            height: 500px;
+            background-color: #fc0;
+            touch-action: pan-y;
+            -ms-touch-action: pan-y;
+        }
+    </style>
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
+    <script src="./js/jquery.mobile.custom.min.js"></script>
+    <script>
+        $(function(){
+            // 1번문제
+            // if($.cookie('user')=='10'){
+            //     $('.lightBox').css('display','none');
+            // }
+            // // 버튼을 클릭을 했을 때 쿠키의 값이 들어오면서 쿠키의 값이 들어와있는중에는 로딩을 해도 if에 의해서 라이트박스가 뜨지 않는다
+            // $('.lightBox>button').click(function(){
+            //     $.cookie('user','10',{expires : 7});
+            //     $('.lightBox').css('display','none');
+            // });
+            // console.log( $.cookie('user'));
+
+            $('.boxWrap').swipeleft(function(){
+                alert('레프트!!');
+            })
+            $('.boxWrap').swiperight(function(){
+                alert('라이트!!');
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="boxWrap">
+        <div class="lightBox">
+            <button>더이상보지않음</button>
+        </div>
+    </div>
+</body>
+</html>
