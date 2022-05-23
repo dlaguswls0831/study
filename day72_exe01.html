@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커서이벤트 자바스크립트</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <style>
+        body{
+            position: relative;
+            height: 100vh;
+            background-color: cadetblue;
+            background-image: url('../개인포폴/bgi.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        /* div{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #fc0;
+            position: fixed;
+            top: 0; left: 0;
+            mix-blend-mode: difference;
+            transform: translate(-50%,-50%);
+        } */
+        div{
+            width: 250px;
+            height: 250px;
+            position: fixed;
+            top: 0; left: 0;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('../개인포폴/날다람쥐.png');
+        }
+        h1{
+            font-size: 120px;
+            font-weight: 700;
+        }
+    </style>
+    <script>
+        $(function(){
+            // client x,y-뷰포트 기준으로 마우스 커서가 떨어진 위치(홈페이지 자체에서 움직일때)
+            // page x,y 전체페이지 기준(요소안에서 움직일때), 마우스무브를 사용했을때 스크롤을 하면 문제가 생긴다 잘 안씀
+            var posX = 0, posY=0;
+            $(window).mousemove(function(a){
+                posX = a.clientX;
+                posY = a.clientY;
+                console.log(a.clientY);
+                $('div').css({
+                    top: posY,
+                    left: posX,
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="image"></div>
+    <div></div>
+    <!-- <h1>제이쿼리 수업은 재미있다.</h1> -->
+    <button>클릭</button>
+</body>
+</html>
