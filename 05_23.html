@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1.on{
+            font-size: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>클릭하기</h1>
+    <h1>클릭하기</h1>
+    <h1>클릭하기</h1>
+    <h1>클릭하기</h1>
+    <h1>클릭하기</h1>
+    <script>
+        // const:상수(변하지않는) let:변수 -ES6버전
+        const h1dom=document.querySelectorAll('h1');
+        let flag=[];
+        console.log(document.querySelectorAll('h1'));
+        // for (var i = 0; i<h1dom.length; i++){}; 간소화하려면 foreach사용
+        // ()=>{} 간소화시켜주려고 쓰기도 하지만 this가 안먹혀서 (콜백함수)o.currentTarget 디스를 선택해준다.
+        // e.onclick=(o)=>{
+            //         console.log(o.currentTarget);
+            //     }
+            h1dom.forEach(function(e,ind){
+            flag[ind]=false;
+            e.onclick=(o)=>{
+                console.log(ind);
+                if(!flag[ind]){
+                        o.currentTarget.animate({
+                        fontSize: '200px'
+                    },{
+                        duration : 500,
+                        fill: 'forwards'
+                    });
+                    flag[ind]=true;
+                }else{
+                    o.currentTarget.animate({
+                        fontSize: '30px'
+                    },{
+                        duration : 500,
+                        fill: 'forwards'
+                    });
+                    flag[ind]=false;
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>
