@@ -72,27 +72,15 @@
                 console.log(eve.originalEvent.wheelDelta);
                 now= eve.originalEvent.wheelDelta;
                 if(flag){
-                    // 마우스 다운, 첫 시작이 0일때 아래로 내려가면 음수의 값
                     if(now<0){
                         con++;
-                        // con의 수가 올라가서 한번 스크롤이 될때 닫아준다
-                        // 다음 스크롤에서 열리고 닫히는게 반복이 됨
                         flag=false;
-                        // 현재 div는 0,1,2,3,4값이므로 if로 마지막 페이지의 범위를 설정해주었다
-                        // 값이 하나면 들어갈땐 {}를 사용하지않아도된다
                         if(con>=4) con=4;
-                        //마우스 업, 마지막이 0이 되야한다. 위로 올라갈땐 값이 양수의 값 
                     }else{
-                        // 마지막 페이지에서 위로 올라갈땐 con--; 값으로 
                         con--;
-                         // 다음 스크롤에서 열리고 닫히는게 반복이 됨
                         flag=false;
-                        // 마우스 업을 해서 첫 페이지에 도달했을 때, 0인 값을 범위로 설정
                         if(con<=0) con=0;
                     }
-                    // 문이 닫히면 아무일도 일어나지 않기 때문에  flag=true;를 선언함
-                    // 위에서 닫았던 문을 다시 열어주기 위해 선언
-                    // 작업에 순서를 주어서 천천히 스크롤 업,다운이 될 수 있도록 animate의 함수안에 선언
                     $('html').animate({
                         scrollTop:loc[con]
                     },500,'easeInSine',function(){
