@@ -85,9 +85,9 @@
                     // offset은 절대좌표를, position은 상대좌표값
                     // 부모 요소의 좌측값을 기준으로 bar 엘리먼트 요소가 위치한 상대적 거리값
                     var p=$(this).position().left;
-                    console.log(p);
+                    // console.log(p);
                     // 현재 드레그의 위치(left)/(나누기)부모너비*100(퍼센트로 나올수있는 값)
-                    var ba=p/w*108.3;
+                    var ba=p/w*109;
                     console.log(ba);
                     $('section').css('margin-left',-ba+'%');
                 }   
