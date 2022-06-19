@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100vh;
+            height: 100vh;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('./images/화면\ 캡처\ 2022-05-20\ 231955.png');
+        }
+        div{
+            position:absolute; 
+            top:0; left: 0;
+            width: 150px;
+            height: 150px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('./images/날다람쥐.png');
+            animation-name: mov;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        @keyframes mov{
+            0%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(20deg);
+            }
+            100%{
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $(document).mousemove(function(e){
+                var mouseX = e.pageX; 
+                var mouseY = e.pageY; 
+                $('div').css({ left: mouseX + "px", top : mouseY + "px"});
+            });
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
